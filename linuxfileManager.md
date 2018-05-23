@@ -23,4 +23,7 @@ f - 普通文件。
 * grep 'root' /etc/passwd 搜索带有root的行 可以跟正则表达式
 * grep '^root' /etc/passwd 搜索以root开始的行 可以跟正则表达式
 ---
-### 四 命令位置查看 Which
+### 四 命令位置查看 which
+* type -a 命令  查看命令所在位置
+* which 命令  查看命令所在位置
+
