@@ -22,3 +22,5 @@ f - 普通文件。
 ### 三 文件搜索命令 grep 表达式 /目录
 * grep 'root' /etc/passwd 搜索带有root的行 可以跟正则表达式
 * grep '^root' /etc/passwd 搜索以root开始的行 可以跟正则表达式
+---
+### 四 命令位置查看 Which
