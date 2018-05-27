@@ -19,4 +19,8 @@ Git 命令记录
 * **git commit -m [message]** 例如  git commit -m '增加了一个文件'
 * **git commit -a -m [message]** 直接从工作区,不仅过缓存区直接提交到仓库 前提该文件以及有仓库中的历史版本
 * **git show 版本号** 查看某个版本的信息
-### 贰. 
+### 贰. 同步远程仓库
+* **git remote add [shortname] [url]** 增加远程仓库,并命名
+* **git push [remote] [branch]** 将本地的提交推送到远程仓库
+* **git pull [remote] [branch]** 将远程仓库的提交拉下到本地
+
