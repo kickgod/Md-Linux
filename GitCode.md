@@ -26,3 +26,5 @@ Git 命令记录
 * **git pull [remote] [branch]** 将远程仓库的提交拉下到本地
 * **git remote -v** 查看远程连接情况
 > 每次提交之前 也就是使用push之前 请用pull先拉下来看看 有没有一样的。切记主机上面和本地上面同时修改
+> 如果需要和远程仓库建立联系 需要首先使用 git remote add name [url] 建立连接 push到远程之前需要 commit commit之前需要 git add .
+> 每次远程之前需要关注本地和远程谁发生了变化。尽量两者变化的位置不一样。
