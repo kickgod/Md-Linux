@@ -13,3 +13,4 @@ Linux 使用入门
 ### 壹. 基本使用
 > * **!$** 引用上一个命令的最后一个参数 例如; 上一个命令 ls /home/user/ 输入 cs !$ 结果系统执行命令为 cd /home/user/ 成功跳到 /home/user 目录下
 > * alias tianyun='cat /etc/sysconfig/network/script/ifcfg.eth0' 
+> * 解释:如果你想给每一位用户都生效的别名，请把alias la='ls -al' 一行加在/etc/bashrc最后面，bashrc是环境变量的配置文件 /etc/bashrc和~/.bashrc 区别就在于一个是设置给全系统一个是设置给单用户使用 有，如果你想给每一位用户都生效的别名，请把alias la='ls -al' 一行加在/etc/bashrc最后面，bashrc是环境变量的配置文件 /etc/bashrc和~/.bashrc 区别就在于一个是设置给全系统一个是设置给单用户使用 *
