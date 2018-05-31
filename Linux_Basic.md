@@ -35,5 +35,5 @@ Linux 使用入门
 > 4. date +%Y 得到年 +%H 得到小时 +%d 得到日 +%m 得到月 +%M 得到分钟
 > **创建以日期参与命名的文件名称  例如:touch `data +%F`file.txt 记住是分号** 结果 2018-05-31file.txt
 ### 肆 .man命令的使用
-> 1.man -f passwd #列出所有章节的passwd  
-> 2.man -a passwd #在所有章节查找
+> 1. man -f passwd #列出所有章节的passwd  
+> 2. man -a passwd #在所有章节查找
