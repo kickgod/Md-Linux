@@ -37,7 +37,7 @@ Linux 使用入门
 ### 肆 .man命令的使用
 > 1. man -f passwd #列出所有章节的passwd  
 > 2. man -a passwd #在所有章节查找
-### cat的使用 --一点点重定向 < >
+### 武 .cat的使用 --一点点重定向 < >
 > 1. cat /path...查看文件
 > 2. cat < /path... 和一一样 吧文件里面东西传递给cat  然后cat 打印给 屏幕
 > 3. cat </pate.. > /etc/host1 吧文件里面东西传递给cat 然后cat 打印给 /etc/host1文件里面  完成单文本文件复制
@@ -69,5 +69,14 @@ inner.txt
 ```
 > 将cat 的输入 导入一个新创建的文件夹里面去
 
-
-
+### 牛 .管道
+> 1. tee 管道 
+----
+``` Shell
+[root@iZn4pjam1xnbipZ script]# date > date.txt
+[root@iZn4pjam1xnbipZ script]# date | tee date1.txt
+Sat Jun  2 19:04:36 CST 2018
+[root@iZn4pjam1xnbipZ script]# 
+```
+> 2. grep
+>> ip addr |grep 'inet' |grep eth0 查看etho网卡的IP地址
