@@ -41,3 +41,33 @@ Linux 使用入门
 > 1. cat /path...查看文件
 > 2. cat < /path... 和一一样 吧文件里面东西传递给cat  然后cat 打印给 屏幕
 > 3. cat </pate.. > /etc/host1 吧文件里面东西传递给cat 然后cat 打印给 /etc/host1文件里面  完成单文本文件复制
+> 4. EOF cat 范围 导入
+----
+``` Shell
+[root@iZn4pjam1xnbipZ script]# cat  <<-EOF
+> 123456
+> 456789
+> EOF
+123456
+456789
+[root@iZn4pjam1xnbipZ script]# 
+```
+> #EOF 标识  可以换任意字符 例如@@ 减号 -可有可没有 如果没有最下面的EOF 必须对对齐左边 否则 可以不对齐左边
+----
+``` Shell
+[root@iZn4pjam1xnbipZ script]# cat <<-@@ > inner.txt
+> 你好啊！
+> 我创建了一个文本
+> 创建时间: `date +%F`
+> @@
+[root@iZn4pjam1xnbipZ script]# ls inner.txt 
+inner.txt
+[root@iZn4pjam1xnbipZ script]# cat inner.txt 
+你好啊！
+我创建了一个文本
+创建时间: 2018-06-02
+```
+> 将cat 的输入 导入一个新创建的文件夹里面去
+
+
+
