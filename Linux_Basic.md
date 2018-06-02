@@ -81,7 +81,9 @@ Sat Jun  2 19:04:36 CST 2018
 > 2. grep
 >> ip addr |grep 'inet' |grep eth0 查看etho网卡的IP地址
 ### 旗 .;; 分号 && 命令排序执行
-> 1 ./config;mkdir user;ls 
+> 1 ; ./config;mkdir user;ls 
 >> A.当./config命令 无论成功与否 于后面的执行无法   ./config不成功 mkdir user 任然执行 ls任然执行 三者无关
-> 2  ./config;mkdir user;ls 
+> 2 && ./config;mkdir user;ls 
 >> A.第一条命令成功后第二条才会执行  否则不执行  
+> 3. || > 1 ./config||mkdir user||ls 
+>> A. 只要前面命令失败后面的命令才会执行
