@@ -89,3 +89,37 @@ Sat Jun  2 19:04:36 CST 2018
 >> A.第一条命令成功后第二条才会执行  否则不执行  
 > 3. || > 1 ./config||mkdir user||ls 
 >> A. 只要前面命令失败后面的命令才会执行
+### 霸 . 元字符
+> ** * ** 通配符 任意字符 任意多个  
+> ** ? ** 匹配一个或者零个任意字符
+> ** [] ** [0-9] 匹配任意数字 [a-z] 匹配任意小写字母 [A-Z] 匹配任意大写字母  
+> ** [^] ** [^0-9] 不能是数字 [^0-9a-zA-Z] 不能使数字大小写字母
+> ** {} ** 创建一个集合  mkdir {a..b}{1..3} 就会创建 a1,a2,a3,b1,b2....
+>> A {asd,a,sd} 三个值
+>> B {,sd} 两个值 
+> ** \ ** 转义 mkdir tian\ yun  将会创建一个文件 tian yun  中间的空格不再是分隔符的意思 而是被转义成为了一个字符串
+> ** () ** 在子Shell中执行
+### 酒 . echo 
+
+> 1. echo -e "\e[1;31mThis is red text]"; #颜色范围31-37 
+-----
+### 狮 .设置控制台颜色 
+
+   0：控制台支持的颜色:black red green yellow blue magnta cyan white
+
+   1 .  设置控制台字体颜色  命令: setterm -foreground color_name    
+
+        例如- 设置字体颜色为绿色: setterm -foreground green 
+
+   2 . 设置控制台背景颜色  命令:setterm -background color_name   
+
+        例如- 设置背景颜色为绿色: setterm -background green
+
+   3. 交换背景色和前景色  [将字体和背景色交换]
+
+        setterm -inversescreen -on/off
+
+   4. -reset 将终端外观恢复成默认设置并清屏
+
+   5. -store 将终端当前的前景色和后景色设置成-reset选项的值
+ 
