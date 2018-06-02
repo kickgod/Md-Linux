@@ -37,3 +37,7 @@ Linux 使用入门
 ### 肆 .man命令的使用
 > 1. man -f passwd #列出所有章节的passwd  
 > 2. man -a passwd #在所有章节查找
+### cat的使用 --一点点重定向 < >
+> 1. cat /path...查看文件
+> 2. cat < /path... 和一一样 吧文件里面东西传递给cat  然后cat 打印给 屏幕
+> 3. cat </pate.. > /etc/host1 吧文件里面东西传递给cat 然后cat 打印给 /etc/host1文件里面  完成单文本文件复制
