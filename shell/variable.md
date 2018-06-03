@@ -135,4 +135,26 @@ Your second variable is: haskjdha
 > . $$ 当前进程的 PID   
 > . $! 上一个`后台`进程的 PID   
 > . $? 上一个命令的返回值 0 表示成功  
- 
+### 弎. $() 
+* 1 .获取命令执行结果 $(ls -l /) 获取执行结果
+### 肆. 变量整数运算
+* 1 .expr   expr 1+2    #expression 表达 表达式 完全不同意的方式 遭人厌 垃圾设计
+* 2 .$(()) 乘法 $((8\*8)) =64 取余 $((8%2))=0  $((2\*\*10)) 2的10次方  
+---
+> $ num1=20;num2=30  
+> $ echo $(($num1+$num2))  
+> 50  
+---
+* 3 .$[] 例子:$[2+5] $[7\*8]
+``` shell
+   #get how many neicun  being use 
+   $ free -m | grep '^Mem'| awk '{print $3}'
+   272
+```
+* 4 .let 例子 let sum=3+5，let i++;
+* 5 . 小数运算 echo "2*4"|bc 
+*  echo "2*4" |bc 
+*  echo "2^4" |bc 
+*  echo "scale=2;6/4" |bc 
+*  awk 'BEGIN{print 1/2}' 
+*  echo "print 5.0/2" |python 
