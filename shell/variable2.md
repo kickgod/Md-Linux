@@ -56,18 +56,35 @@ ${school} is good 1000phone is good
 > echo ${url:10} # om.cn
 ---
 * 4 .内容替换操作 ${val/n/N} ${val//n/N} 前面短匹配   后面贪婪匹配  替换搜索
-> val="www.sima.com.cn"        
-> echo ${val/sina/SINA}  #www.SINA.com.cn    
-> echo ${val/w/W}  #www.sina.com.cn    
-> echo ${val//w/W} #WWW.sina.com.cn    
-> echo ${val/%w/W} 从开头替换  
-> echo ${val/%w/W} 从结尾开始替换  
+``` shell
+ val="www.sima.com.cn"    
+ echo ${val/sina/SINA}  #www.SINA.com.cn    
+ echo ${val/w/W}        #www.sina.com.cn    
+ echo ${val//w/W}       #WWW.sina.com.cn    
+ echo ${val/%w/W}       #从开头替换  
+ echo ${val/%w/W}       #从结尾开始替换  
+```
 * 5 .${变量名:-新的变量值}   变量没有被赋值：会使用“新的变量值“ 替代 变量有被赋值（包括空值）： 不会被替代 
-> \- 符号的作用   echo ${vals:-1513215} 如果vals未赋值 那么输出 1513215 但是vals任然为空 否则为vals的值  
+> \:- 符号的作用   echo ${vals:-1513215} 如果vals未赋值 那么输出 1513215 但是vals任然为空 否则为vals的值  
 ---
 * 6 .${变量名:=新的变量值}   变量存在且未被赋值：变量被复制为新值并且输出 
 > = 符号的作用   echo ${vals:-1513215} vals如果已经赋值那么不改变 否则vals值为1513215
 ---
+``` shell
+$ fire=
+$ echo ${fire-456}
+
+$ echo $fire
+
+$ echo ${fire:-456};echo $fire
+456
+
+$ echo ${fire:=456}
+456
+$ echo $fire
+456
+```
+>`-` 只要定义了 就不会使用后面的值  `-:`只要前面没有赋值 那么使用后面的值 但是不给它复制  `:=` 只要没赋值  那么赋值使用后面的值 否则使用自己的值
 
 
 
