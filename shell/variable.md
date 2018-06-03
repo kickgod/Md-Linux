@@ -38,7 +38,11 @@ echo "执行完毕"
 echo -e "\e[1;37m";
 ```
 D .**用户输入** read ip;用户输入 放入ip中
-> `提示输入` read -p "Please input your name:" ip   #prompt 提示
+> `提示输入` read -p "Please input your name:" ip   #prompt 提示  
+----
+E .**查看环境变量**： echo $变量名 env 例如 env |grep back_dir2  
+F .**取消环境变量**： unset 变量名
+>
 ---
 ### 贰 .环境变量 / 位置变量
 > 0. export 查看环境变量
