@@ -74,6 +74,7 @@ Your second variable is: haskjdha
 ```
 > 2. 作用范围： 仅在当前 shell 中有效 
 > 3. 实现多个Shell公共工作 ,使用 . 或者 source 执行shell 在当前shell 执行shell  当前shell 环境就可以获得执行shell 中的变量
+> 如此这样当多个脚本使用的时候,如果需要更改变量那么就不需要更改每个文件里面的变量 这样只需要更改一个变量就可以更改每个文件的变量
 ----
 ![Pulic shell](/Image/publicsh.png)
 * 实例
@@ -123,4 +124,15 @@ Your second variable is: haskjdha
 [root@iZn4pjam1xnbipZ script]$ 
           
 ```
-
+---
+* 3 .位置变量 $1 $2 $3 $4 $5 $6 $7 $8 $9 ${10} 
+ 
+* 4 .预定义变量  
+> . $0 脚本名   
+> . $* 所有的参数   
+> . $@ 所有的参数  
+> . $# 参数的个数   
+> . $$ 当前进程的 PID   
+> . $! 上一个`后台`进程的 PID   
+> . $? 上一个命令的返回值 0 表示成功  
+ 
