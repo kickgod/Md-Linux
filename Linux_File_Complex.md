@@ -33,5 +33,5 @@ f - 普通文件。
 * cat -A 显示包括控制字符
 ---
 ### grep 过滤输出
-grep 'root' /etc/passwd
+* grep 'root' /etc/passwd
 ---
