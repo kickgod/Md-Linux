@@ -137,7 +137,7 @@ Your second variable is: haskjdha
 > . $? 上一个命令的返回值 0 表示成功  
 ### 弎. $() 
 * 1 .获取命令执行结果 $(ls -l /) 获取执行结果
-### 肆. 变量整数运算
+### 肆. 变量运算
 * 1 .expr   expr 1+2    #expression 表达 表达式 完全不同意的方式 遭人厌 垃圾设计
 * 2 .$(()) 乘法 $((8\*8)) =64 取余 $((8%2))=0  $((2\*\*10)) 2的10次方  
 ---
@@ -161,3 +161,4 @@ Your second variable is: haskjdha
 *  awk 'BEGIN{print 1/2}'  $awk 使用 BEGIN 
 *  echo "print 5.0/2" |python 
 ---
+* 6 .let i++ let ++i 不谈 太简单了
