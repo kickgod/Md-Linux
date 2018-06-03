@@ -86,9 +86,38 @@ $ echo $fire
 ```
 >`-` 只要定义了 就不会使用后面的值  `-:`只要前面没有赋值 那么使用后面的值 但是不给它复制  `:=` 只要没赋值  那么赋值使用后面的值 否则使用自己的值
 
+### 流 .条件测试
+---
+* test / [空格 内容 空格]  / ((1>2))  /-gt -ge -lt -le -ne -nt -no  测试语句  
+``` shell
+#!/bin/bash
 
+if test -e /script/input.sh;then
 
+ echo "the file is exisit"
 
+else
+
+ echo "the file is  not exist"
+
+fi
+
+if [ -d /script/input.sh ] ;then
+
+  echo "是目录文件"
+
+else
+
+ echo "不是目录文件"
+
+fi
+```
+>输出: the file is exisit 不是目录文件  实际上 文件存在
+* -e file 判断文件是否存在
+* -d file 判断文件是否是目录
+* -f file 判断文件是否是普通文件
+* -x file 判断是否为可执行文件
+* man test 可以看到所有的测试命令
 
 
 
