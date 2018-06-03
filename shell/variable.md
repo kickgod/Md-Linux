@@ -152,9 +152,12 @@ Your second variable is: haskjdha
    272
 ```
 * 4 .let 例子 let sum=3+5，let i++;
-* 5 . 小数运算 echo "2*4"|bc 
-*  echo "2*4" |bc 
+* 5 . 小数运算 
+---
+> 例子:
+*  echo "2\*4" |bc 
 *  echo "2^4" |bc 
-*  echo "scale=2;6/4" |bc 
-*  awk 'BEGIN{print 1/2}' 
+*  echo "scale=2;6/4" |bc #scale 控制进度  
+*  awk 'BEGIN{print 1/2}'  $awk 使用 BEGIN 
 *  echo "print 5.0/2" |python 
+---
