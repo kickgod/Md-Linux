@@ -41,6 +41,13 @@ D .**用户输入** read ip;用户输入 放入ip中
 > `提示输入` read -p "Please input your name:" ip   #prompt 提示
 ---
 ### 贰 .环境变量 / 位置变量
+> 0. export 查看环境变量
+---
+ * 1.$PATH  查看路径
+ * 2.$USER  查看当前用户
+ * 3.$UID   查看当前用户ID
+ * 4.$SHELL 查看当前shell
+---
 > 1. 执行shell 输入变量 `[root@iZn4pjam1xnbipZ script]$ . VariableYi.sh haha haskjdha` 
 ``` shell
 echo -e "\e[1;33m---程序开始---";
@@ -60,6 +67,56 @@ Your second variable is: haskjdha
 ‘执行完毕’
 
 [root@iZn4pjam1xnbipZ script]$ 
+```
+> 2. 作用范围： 仅在当前 shell 中有效 
+> 3. 实现多个Shell公共工作 ,使用 . 或者 source 执行shell 在当前shell 执行shell  当前shell 环境就可以获得执行shell 中的变量
+----
+![Pulic shell](/Image/publicsh.png)
+* 实例
+> Public.sh
+``` shell
+#!/bin/bash
 
+# define last update time
+
+ last_update_time='2018/6/3';
+
+# define commit personCount
+
+  join_person_count=3
+
+# define password 
+
+  password='2016110418'
+
+# efine Id List
+
+  ID_Jx='2018001'
+  ID_LMC='2018002'
+```
+----
+> login.sh
+``` shell
+#!/bin/bash
+
+ . Public.sh
+
+ echo -e "\e[1;32m程序开始";
+
+ echo '密码为:'  $password
+
+ echo "程序结束"
+ echo -e "\e[1;37m";
+``` 
+``` bash
+[root@iZn4pjam1xnbipZ script]$ vim Public.sh
+[root@iZn4pjam1xnbipZ script]$ vim login.sh
+[root@iZn4pjam1xnbipZ script]$ . login.sh
+程序开始
+密码为: 2016110418
+程序结束
+
+[root@iZn4pjam1xnbipZ script]$ 
+          
 ```
 
