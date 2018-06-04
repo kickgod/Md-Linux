@@ -1,6 +1,5 @@
 Linux Vim 的使用 自助记忆
 ====
-> Vim 编辑器模式
 ![Vim.png](/Image/Vim.png)
 ### 一. 光标定位
 * **h j k l :** 进行左下上右的移动
