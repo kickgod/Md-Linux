@@ -10,6 +10,7 @@ Linux 文件系统操作
 > 1 .参数 -v 限制复制信息  
 > 2 .参数 -r 递归复制文件  
 > 注释:使用cp `一般 -rv 参数` 最为常用
+----
 ### 移动文件 mv 旧地址 新地址
 ```shell
 # mv file1 /home/dir3                       将 file2 移动到/home/dir3 
@@ -18,6 +19,23 @@ Linux 文件系统操作
 ```
 ### 删除文件 rm 路径  参数: -r 递归 -f force 强制 -v 详细过程 -i 询问你是否删除
 * 1 .rm -rf * 或者 rm -rf / 传说中的删库到跑路 
-* 2 .rm -rfi *.pdf 删除以pdf结尾的文件  后面可以跟正则表达式
-
-
+* 2 .rm -rfi \*.pdf 删除以pdf结尾的文件  后面可以跟正则表达式
+---
+### 查看文件内容 cat / grep / vi vim 
+```bash
+less  more head  tail  
+#查看文件前面一部分 大部分  头部  尾部 十行
+[root@tianyun ~]# head  /etc/passwd
+[root@tianyun ~]# head -2 /etc/passwd 查看前面两行 
+[root@tianyun ~]# tail /etc/passwd 
+[root@tianyun ~]# tail -1 /etc/passwd 查看倒数第一行
+[root@tianyun ~]# tail /var/log/messages 
+[root@tianyun ~]# tail -20 /var/log/messages 
+[root@tianyun ~]# tail -f /var/log/secure         //-f 动态查看文件的尾部 
+[root@tianyun ~]# tail -F /var/log/secure            //-F 动态查看文件的尾部
+grep 针对文件内容进行过滤 
+# grep 'root' /etc/passwd 
+# grep '^root' /etc/passwd 
+# grep 'bash$' /etc/passwd 
+# grep 'failure' /var/log/secure
+```
