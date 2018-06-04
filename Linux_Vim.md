@@ -53,8 +53,31 @@ Linux Vim 的使用 自助记忆
   :wq! 强制保存退出   
   :x  保存并退出   ZZ  
 ```
+---
 ### 无. 查找替换 语法: [行号开始 行号结束]/[%] s/匹配/替换结果/[g] 
 * 1. `1,5 s/root/JiangXing/g`    将1~5行的root 全部换成JIanXing 全局匹配 
 * 2. `2,$ s/root/JiangXing/`     将1~5行中每一行的第一个root换成JiangXing **$表示最后一行**
 * 3. `% s/root/JiangXing/`       将所行中的每一行的第一个root换成JiangXing **%表示所有行**
-
+* 4. `5,10 s/.*/#&/` 将5~10行前面加一个#   **&表示匹配到的内容**
+---
+### 流. 保存另存为 读写文件
+* :w 保存文件
+* :w newName.txt 另存为 newName.txt
+* :r /etc/hosts 将/etc/hosts里面的信息导入到光标的位置处
+* :5 r /etc/hosts  将/etc/hosts里面的信息导入到第五行位置处
+### 旗. 设置环境
+* :set nu 设置行号
+* :set ic 不区分大小写
+* :set ai 自动缩进
+* :set list 显示控制字符
+* :set nonu 取消行号
+* :set noic 取消控制字符
+### 如果要设置永久环境 
+``` shell
+永久的环境：     修改 vim 环境配置文件                     
+影响所有系统用户      /etc/vimrc                    
+影响某一个用户        ~/.vimrc
+# vim ~/.vimrc       
+set ic       将这下面的两个加入.vimc文件中
+set nu
+```
