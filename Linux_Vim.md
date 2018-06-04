@@ -66,8 +66,8 @@ Linux Vim 的使用 自助记忆
 * :r /etc/hosts 将/etc/hosts里面的信息导入到光标的位置处
 * :5 r /etc/hosts  将/etc/hosts里面的信息导入到第五行位置处
 ### 旗. 设置环境
-* :set nu 设置行号
-* :set ic 不区分大小写
+* :set nu 设置行号 number
+* :set ic 不区分大小写 ignore case
 * :set ai 自动缩进
 * :set list 显示控制字符
 * :set nonu 取消行号
