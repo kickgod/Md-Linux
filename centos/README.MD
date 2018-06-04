@@ -4,4 +4,5 @@ CentOS7 学习笔记
 ----
 * 1 .[文件管理-1](https://github.com/kickgod/Md-Linux/tree/master/centos)
   * A.[文件杂记-A](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_File_Complex.md)
-  * A.[文件目录-B](https://github.com/kickgod/Md-Linux/blob/master/centos/Linnx_file_direction.md) 
+  * B.[文件目录-B](https://github.com/kickgod/Md-Linux/blob/master/centos/Linnx_file_direction.md) 
+  * C.[文件操作-C](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_file_Coporation.md)
