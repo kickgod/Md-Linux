@@ -81,3 +81,8 @@ usermod –d /home/u1234   u1
  * gpasswd -M 一次性多个成员加进组  gpasswd -M alice,tixi,kick groupName 吧三个用户加入 groupName组 逗号隔开
  * gpasswd -d 删除指定用户  gpasswd -d jack groupName  吧jack从groupName组删除
  * gpasswd -a 增加指定组    gpasswd -a jack groupName 吧jack加入进groupName组中
+#### chage  命令负责管理用户密码时效问题
+> * -m   +天数  表示密码可更改的最小天数。
+> * -M   +天数  表示密码有效（可更改）的最大天数
+> * -E  +日期  表示在该日期之后密码失效。   如chage -E 2017-1-20  zhangsan 
+> * -l(小写L） +用户名   可以查看用户的当前设置信息
