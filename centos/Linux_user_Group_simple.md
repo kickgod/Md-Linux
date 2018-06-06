@@ -1,6 +1,6 @@
 Linux 用户和用户组 <零> 简记
 ====
-### 用户操作基本命令
+### 一. 用户操作基本命令
 ``` bash
  useradd:   添加用户 
  userdel:   删除用户 
@@ -32,7 +32,7 @@ Linux 用户和用户组 <零> 简记
 ##### 注意: 密码不能与账号相同
 ##### 注意: 密码必须八个字符以上
 #### userdel [选项] 用户名 删除用户
- > * -r 删除用户极其主目录  userdel -r Kicker
+ > * -r 删除用户极其主目录  userdel -r Kicker 还有邮件目录 /var/spool/mail/Kicker
  ```Shell
  #不能删除一个已登陆进系统的账户  删除账号前，必须先杀死属于指定账号的运行进程 
  ps  -aux | grep 'u1' 或者 
@@ -59,3 +59,25 @@ usermod –d /home/u1234   u1
  > * su - 用户名 切换并且改变shell环境
  > * su  不加任何参数 默认切换到root
  > * sudo 一般切换为用有限制的sudo
+ ### 二. 用户组操作命令
+ ``` shell
+ groupadd [选项] 组名称 
+ groupmod 修改组名称 
+ gpasswd root用户使用
+ gpasswd 组管理员使用 
+ ```
+ #### groupadd 增加组
+ > * groupadd -g 指定组群的 gid
+ > * groupadd -f 如果组已存在 则显示错误并且推出
+ > * groupadd -r 建立系统用户组
+ #### groupmod 选项 新名称 旧名称
+ > * -n newName 组名修改
+ > * -g gid 更改gid 数字
+ #### groupdel 删除组
+ > * groupdel 组名称 
+ #### gpasswd 命令
+ * gpasswd -r groupName --取消密码 
+ * gpasswd -A 指定组管理员   gpasswd -A alice  groupName  吧Alice 设置为groupNam的管理员
+ * gpasswd -M 一次性多个成员加进组  gpasswd -M alice,tixi,kick groupName 吧三个用户加入 groupName组 逗号隔开
+ * gpasswd -d 删除指定用户  gpasswd -d jack groupName  吧jack从groupName组删除
+ * gpasswd -a 增加指定组    gpasswd -a jack groupName 吧jack加入进groupName组中
