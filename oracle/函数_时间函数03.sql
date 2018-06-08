@@ -24,6 +24,11 @@ select LAST_DAY(SYSDATE)from dual;
 --查看相差月数
 select months_between(ADD_MONTHS(sysdate,50),sysdate) from dual;
 
+-- 两个时间相减 则为相差天数
+
+--查看 相差年数
+select trunc(months_between(sysdate,to_date('1995-8-5 21:32:21','yyyy-mm-dd hh24:mi:ss'))/12) from dual;
+
 --extract
 -- 时间截取
 /*

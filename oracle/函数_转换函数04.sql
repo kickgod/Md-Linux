@@ -24,6 +24,9 @@
    AM | PM 表示上午或者下午
    FM 去除前导零
  */
+ select to_date('2005-01-01 13:14:20','yyyy-mm-dd HH24:mi:ss') from dual;  
+ 
+ 
   --TO_CHAR(DATE,FORMAT)
   select  sysdate 当前系统时间,To_char(SYSDATE,'YYYY-MM-DD') FROM DUAL;
   -- TO_CHAR(DATE,FORMAT)  去除前导零
@@ -49,14 +52,14 @@
  
  -- TO_Number() 字符串编程数字
  -- 没有用 Oracle支持自动转型
- select to_number('19') *to_number('56') from dual;
+  select to_number('19') *to_number('56') from dual;
  
- select '19'*'56' from dual;
+  select '19'*'56' from dual;
  
 -- 数字转字符串 cast(value as newType) 
-select cast(95.6512 as varchar(20)) from dual;
+ select cast(95.6512 as varchar(20)) from dual;
 -- 数字转字符串
-select 95.6512 from dual;
+ select to_char(95.6512) from dual;
  
  
  

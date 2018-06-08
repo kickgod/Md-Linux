@@ -36,6 +36,7 @@ select RPAD('ABCD',50,'_') from dual;
 -- 查找 查找字符第一次出现的位置 返回逻辑位置从1开始
 select INSTRB('CORPORATE FLOOR','OR') as results FROM DUAL;
 
+select INSTRB('CORPORATE FLOOR','XXX') as results FROM DUAL;
 
 
 
