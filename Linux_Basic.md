@@ -21,6 +21,8 @@ Linux 使用入门
 > * type -a ls 查看命令类型
 > * echo  alias catdire='cat /home/user/asd.txt' > /etc/bashrc 就可以吧catdire添加进系统文件永久别名
 > * echo * 输出当前文件夹下面的所有文件名
+> * echo "信息" > li.txt 将li.txt里面的所有文字信息替换成信息
+> * echo "信息" >> li.txt 在li.txt 里面追加信息
 ### 贰. ls命令查看列表
 > 1. -a 隐藏目录
 > 2. -l 长列表
