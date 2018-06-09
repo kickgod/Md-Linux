@@ -32,7 +32,7 @@ rwx
 chmod 777 filename 一次性设置文件属主 属组 其他用户的权限 读写执行
 chmod 740 filename 一次性设置文件属主 属组 其他用户的权限 
 ```
-#### 对目录有w权限,可以在目录中创建新文件,可以删除文件中的文件(跟文件的权限无关)
+##### `对目录有w权限,可以在目录中创建新文件,可以删除文件中的文件(跟文件的权限无关)`
 ### 3. setfacl 命令 set file access control lists
 * `setfacl [-bkndRLPvh] [{-m|-x} acl_spec] [{-M|-X} acl_file] file ...`
 * -m 设置权限 -x 删除权限
