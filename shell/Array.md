@@ -87,6 +87,8 @@ A0003: Wang
 Map=([name]=MapList [count]=5 [opacity]=10 [owner]="root kicker" [top]=person )
 echo ${Map[@]};
 ```
+#### 三 .增加元素的方法
+* Map+=([user]="sour");
 ### 数组的属性
 `# echo ${array[index2]} 访问数组中的第二个元数`  
 `# echo ${array[@]} 访问数组中所有元数 等同于 echo ${array1[\*]}`   
