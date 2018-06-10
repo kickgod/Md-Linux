@@ -83,3 +83,88 @@ JxKicker
 8
 
  ```
+ ### 函数返回值2
+ * return 无法自由返回字符串 数值 等等
+ * 这个时候我们使用输出 echo 把函数执行结果复制给变量
+ ```shell
+ Name="JxKicker";
+
+
+function getName {
+    Name='User'
+    echo $Name 
+}
+
+Name=`getName`
+echo "name:" $Name
+输出
+Name: User
+```
+* `这样就能够正常返回结果了`
+### 函数的参数
+* 值参数
+```shell
+fun3(){
+    let result=$1*$2*$3;
+    echo $result;
+}
+
+echo `fun3 1 2 3`
+
+. Function.sh  2 3 4
+输出 结果
+6
+
+如果要实现2*3*4
+调用方式
+echo `fun3 $1 $2 $3`
+```
+* 数组作为参数 利用 $@获取所有参数 利用 for val in $@ 遍历所有参数
+```shell
+
+fun3(){
+   local result=1;
+   for val in $@
+   do
+     let result=$result*$val;
+   done
+   echo $result;
+}
+
+echo `fun3 $@`
+
+
+
+
+[root@localhost script]# . Function.sh  2 3 4
+开始执行
+24
+执行完毕
+
+[root@localhost script]# . Function.sh  2 3 4 5 6 7
+开始执行
+5040
+执行完毕
+
+--------------------------------------------
+fun3(){
+   local arraylist=($*) #数组复赋值
+   local result=1;
+   for val in ${arraylist[@]}
+   do
+     let result=$result*$val;
+   done
+   echo $result;
+}
+
+Array=(1 2 3 4 5 6 7)
+
+echo `fun3 ${Array[*]}`
+
+```
+* 如果需要返回数组 那么只需要 echo ${Array[\*]} 即可
+
+### 函数的变量
+* 函数内部使用local 修饰成为本地变量
+
+
