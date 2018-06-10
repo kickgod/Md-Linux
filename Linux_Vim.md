@@ -81,3 +81,6 @@ Linux Vim 的使用 自助记忆
 set ic       将这下面的两个加入.vimc文件中
 set nu
 ```
+### 九. 双屏编辑
+* vim -o bashlist.sh vimlisy.sh  `将会双屏打开`
+* 切换屏幕的方法  ctrl+ww
