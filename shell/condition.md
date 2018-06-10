@@ -106,7 +106,7 @@ for 变量名 [ in 取值列表 ]
 do 循环体  
 done  
 ```shell
-for i in $(seq 1 10) #seq  #产生1~10之间的数字
+for i in $(seq 1 10) #seq  #产生1~10之间的数字 遍历数组请用 $(seq 0 last_index)
 do
 echo "循环次数" $i
 done
