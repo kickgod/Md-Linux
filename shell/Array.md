@@ -90,6 +90,7 @@ echo ${Map[@]};
 #### 三 .增加元素的方法
 * Map+=([user]="sour");
 ### 数组的属性
+`# echo ${Array[*]} 代表函数的所有参数`  
 `# echo ${array[index2]} 访问数组中的第二个元数`  
 `# echo ${array[@]} 访问数组中所有元数 等同于 echo ${array1[\*]}`   
 `# echo ${#array[@]} 获得数组元数的个数`  
