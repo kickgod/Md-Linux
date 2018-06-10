@@ -104,6 +104,7 @@ Sat Jun  2 19:04:36 CST 2018
 ### 酒 . echo 
 
 > 1. echo -e "\e[1;31mThis is red text]"; #颜色范围31-37 
+> 2. echo -n $Name  打印不换行
 -----
 ### 狮 .设置控制台颜色 
 
