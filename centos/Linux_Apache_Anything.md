@@ -28,6 +28,13 @@ Apache: www.apache.org
 ##### Group apache //运行 Apache 的用户组 
 ##### DirectoryIndex index.html index.php //设置默认主页 
 ##### DocumentRoot //站点默认主目录
+```conf
+<Directory "/var/www"> Apache访问控制
+   AllowOverride None
+   # Allow open access;
+   Require all granted
+<Directory>
+```   
 ----
 tt -tnl | grep :80 查看80端口运行状态
 ### 2.基本信息
