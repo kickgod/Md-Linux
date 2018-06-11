@@ -15,7 +15,7 @@ Linux文件权限 Ugo<一>
 * -R 参数  如果加上 则递归子文件改变  属组或者属主
 ### 2. chmod 改变权限
 ``` shell
-改变对象 u g o   #user group other
+改变对象 u g o  a #user group other  all  
 操作 + - =
 符号 r w x
 例如: chmod u+w filename 给文件的主人增加读的权限
@@ -39,6 +39,7 @@ chmod 740 filename 一次性设置文件属主 属组 其他用户的权限
 * -m 设置权限 -x 删除权限
 * \# setfacl -m u:alice:rw /home/test.txt  //增加用户 alice 权限
 * \# setfacl -m u:jack:- /home/test.txt   //增加用户 jack 权
+* \# u g o m //m  设置所有的权限
 ```shell
 例子
         授予额外的用户读取权限
