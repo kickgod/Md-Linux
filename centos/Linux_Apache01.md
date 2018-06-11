@@ -12,7 +12,7 @@ Linux Apache 安装 - 使用 全默认未配置
 ```
 > 默认情况下 网站主目录在/var/www/html/ 下面 所以讲静态网站放在这个目录下  再放一个index.html /index.php就可以当做一个静态网站服务器了
 ##### 这里我们在阿里云服务器上面放了一个静态的网站 / 也可以在局域网中做  使用dhcp组建一个虚拟局域网也可以
-![静态网站页面列表](Image/listhtml.png)
+![静态网站页面列表](/Image/listhtml.png)
 
 -----
 打开访问设置 防火墙 和http服务
@@ -56,7 +56,7 @@ phpinfo();
 ```
 >  然后访问 ip/2.php  
 **结果**  
-![php版本信息](Image/phpverison.png)
+![php版本信息](/Image/phpverison.png)
 
 ----
 ### 3.Mariadb 数据库安装
