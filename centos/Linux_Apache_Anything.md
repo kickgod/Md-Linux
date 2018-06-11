@@ -4,7 +4,7 @@ Apache 配置
 户将一个网站放在该用户的目录 例如 /home/Apache/www/ 下面用该用户管理网站 而不必一个root用户管理所有事情,而且也不安全`
 
 ----
-### 1.# Apache基础信息
+### 1.Apache基础信息
 ```shell
 Apache: www.apache.org 
 软件包： httpd 
@@ -13,3 +13,7 @@ Apache: www.apache.org
 /etc/httpd/conf.d/*.conf 
 /etc/httpd/conf.d/welcome.conf //默认测试页面
 ```
+#### Apache文件目录
+![Apache文件目录](/Image/ApacheDirectionary.png)
+> 查看日志 :ls /etc/httpd/log  下面有两个日志文件 access_log error_log 访问日志和错误日志  
+> 日志文件 :cd /var/log/httpd/ 下面
