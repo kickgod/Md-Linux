@@ -6,6 +6,7 @@ Linux Shell 世界旅程
 * 3.[第弎场 Shell条件测试](https://github.com/kickgod/Md-Linux/blob/master/shell/condition.md)
 * 4.[第肆场 Shell数组变量](https://github.com/kickgod/Md-Linux/blob/master/shell/Array.md)
 * 5.[第伍场 Shell函数类型](https://github.com/kickgod/Md-Linux/blob/master/shell/Function.md)
+* 6.[第陆场 ShellSed编辑器](https://github.com/kickgod/Md-Linux/blob/master/shell/Grep_Sed.md)
 -----
 ##### 提示 小计
  `() 子shell中执行`  
