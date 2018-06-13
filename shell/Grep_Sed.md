@@ -54,10 +54,17 @@ Linux sed  grep
 * sed -r 's/root/JiangXingKanZheLi-----------/gi' passwd 将root 替换为JiangX... 然后输出出来 gi全问匹配 忽略大小写
 * sed -r 's#root#JiangXingKanZheLi-----------#gi' passwd  和上面一样 只是分隔符不同  防止内容里面包含/
 * sed -r 's#root#JiangXingKanZheLi-----------#gi p' passwd  替换后打印出来 替换的那几行
+#### 2. 定址 确定处理的行的范围
+* 1. 默认是全部行
+```
+ sed -r 'd' passwd 删除所有行 无输出
+ sed -r '3d' passwd 删除第三行 
+  sed -r '3，5d' passwd 删除三到五行 
+```
 ### 4.命令 
 * `d` 删除 delete
 * `p` 打印 print
 ### 4.参数
 * `-r` `支持扩展元字符`
 * `-n` `静默工作方式 使用正表达式的时候不打印未匹配的`
-* ``
+* `-p` `打印匹配的结果` 
