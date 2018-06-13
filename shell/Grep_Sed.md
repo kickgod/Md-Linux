@@ -1,6 +1,6 @@
 Linux sed  grep
 ====
-### 一.grep 命令 全局搜索
+### 一.[grep](http://man.linuxde.net/grep) 命令 全局搜索
 > grep  :在文件中全局查找指定的正则表达式,并且打印所有包含该表达式的行  
 > egrep :扩展的grep ，支持更多的正则表达式元字符  
 > fgrep :固定的grep 不支持正则表达式  
@@ -26,7 +26,7 @@ Linux sed  grep
 * > #ll | grep "sshd"
 * > grep "alice" /etc/passwd /etc/shadow/etc/group 从三个文件中过滤Alice
 ----
-### 二.Sed 编辑器
+### 二.[Sed](http://man.linuxde.net/sed) 编辑器
 `sed 是一种在线的、非交互式的编辑器，它一次处理一行内容。处理时，把当前处理的行存 储在临时缓冲区 中`
 <br/>
 `称为“模式空间”（pattern space），接着用 sed 命令
@@ -59,7 +59,9 @@ Linux sed  grep
 ```
  sed -r 'd' passwd 删除所有行 无输出
  sed -r '3d' passwd 删除第三行 
-  sed -r '3，5d' passwd 删除三到五行 
+ sed -r '3，5d' passwd 删除三到五行 
+ sed -rn '1,5p' /script/passwd  打印1~5行
+
 ```
 ### 4.命令 
 * `d` 删除 delete
