@@ -77,38 +77,52 @@ Linux sed  grep
 ```
 ------
 ### 4.命令 
+----
 * `d` 删除 delete $表示最后一行
 >  sed -r '3d' passwd 删除第三行 
+----
 * `p` 打印 print
 >  sed -r '3p' passwd 打印第三行 
+----
 * `a` 在当前行后面添加一行或者多行 add
 >  sed -r '1a\asdasdasdasdasdasd' passwd  在第一行后面再添加一行 内容为asdasdasdasdasdasd
 >  sed -r 'a\   ' passwd 在每一行的后面后面加一个空行
+----
 * `c` 用新文本修改(替换)当前行中的文本 cover 覆盖
 >  sed -r '2c11111111111111111' passwd 将第二行换成1111111111111111111
 >  sed -r `2s/.*/1111111111111/` passwd 也可以完成
+----
 * `s` 匹配替换文本
 >  sed -r 's#root#aaa#' passwd 在root后面加上aaa 或者  
 >  sed -r 's/(.)(.)(.\*)/\1YYY\2\3/' passwd  利用()分组在每一行的第二字符后面加上YYY
+----
 * `i` 在当前行之前插入文本 INSERT
 >  sed -r '2i11111111111111111' passwd 在第二行前面插入一行111111111111111111111
+----
 * `l` 列出非打印字符 list
 >  sed -rn '1,3l' passwd 打印出1到3行的非字符串
+----
 * `n` 读取下一输出行 并从下一条命令而不是第一条命令开始对其处理 next
 >  sed -r 'd/adm/{n;d}' passwd 删除具有adm哪行的下一行 
 >  sed -rn '/adm/{n;s/sbin/#####/;p}' passwd 对于具有adm的哪一行的下一行里面的sbin替换为#####然后再打印出来  
+----
 * `q` 结束或者退出sed quit
 >  sed -r '3q' passwd 第三行的时候退出  
+----
 * `!` 取反 对所选的行以外的其他行应用命令
 >  sed -r '3!d' passwd 除了第三行 其他的都删除了 
+----
 * `g` 在行内进行全局替换 global 
 * `i` 忽略大小写 ignore
->  sed -r `2r list` passwd 读到第二行的时候 将其写入passwd文件读入  
+>  sed -r `2 list` passwd 读到第二行的时候 将其写入passwd文件读入  
+----
 * `r` 从文件中读  read
->  sed -r `2r /etc/host` passwd 读到第二行的时候 将/etc/host文件读入  
+>  sed -r `2r /etc/host` passwd 读到第二行的时候 将/etc/host文件读入
+----
 * `e` 废材 多编辑
 >  sed -r -e '1,3d' -e 's/Halle/root/' passwd 1-3行删除  然后替换Halle为root
 >  sed -r '1,3d;s/halle/root' passwd 完成e的功能
+----
 ```
 h 把模式空间里的内容复制到暂存缓冲区(覆盖) 
 H 把模式空间里的内容追加到暂存缓冲区  
