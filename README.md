@@ -1,4 +1,4 @@
-Jxkicker 的 Linux学习笔记
+Linux学习笔记
 ==
 >last update 2018-6-4 11:19 -- first update time:2018-4-16
 ###  一 .归档 初级--理解CentOS7
@@ -12,4 +12,4 @@ Jxkicker 的 Linux学习笔记
 #### Linux 安装插件
 * `tree`  `yum -y install tree` 树形展示目录结构
 * `tcpdump`  `yum -y install tcpdump` 根据使用者的定义对网络上的数据包进行截获的包分析工具
-* ``
+* `htop` `yum -y install htop`  动态监视进程系统运行
