@@ -8,3 +8,8 @@ Jxkicker 的 Linux学习笔记
 > * [IV.Visual Studio Code学习记录](https://github.com/kickgod/Md-Linux/tree/master/vscode)
 ###  贰 .归档 初中级--笔记Shell
 > * [Shell 变量笔记](https://github.com/kickgod/Md-Linux/tree/master/shell)
+---------
+#### Linux 安装插件
+* `tree`  `yum -y install tree` 树形展示目录结构
+* `tcpdump`  `yum -y install tcpdump` 根据使用者的定义对网络上的数据包进行截获的包分析工具
+* ``
