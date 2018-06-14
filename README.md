@@ -13,3 +13,5 @@ Linux学习笔记
 * `tree`  `yum -y install tree` 树形展示目录结构
 * `tcpdump`  `yum -y install tcpdump` 根据使用者的定义对网络上的数据包进行截获的包分析工具
 * `htop` `yum -y install htop`  动态监视进程系统运行
+* `vim` `yum -y install vim`  vim编辑器
+* `vim-enhance` `yum -y install vim-enhance`  Vim颜色增强
