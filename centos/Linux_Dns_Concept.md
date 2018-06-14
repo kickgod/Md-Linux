@@ -58,4 +58,23 @@ b. 转发到其它 DNS 服务器
 
 ``` 
 ![DNS解析图片](/Image/DNS.png)
-### 五.Cache Only DNS服务器
+### 五.Cache Only DNS服务器 Hosts文件
+#### 1. 测试 `[使用虚拟机]`
+* Virtual Box 启动两台服务器 一台Server 一台Client 
+
+* Server 先按照Tcpdump [| tcpDump 简介](https://www.cnblogs.com/f-ck-need-u/p/7064286.html) [tcpDump 详解 |](https://www.cnblogs.com/tingyuxuanzhuzi/p/6906199.html)----抓包工具
+
+* 管理里面 启动主机网络管理器 启动DHCP  然后两台主机 设置网络为 host-only 组件成为一个局域网
+
+![主机管理](/Image/DHCP_Host_only.png)
+``` shell
+ 这里我们会用到两条命令
+ 
+ 1.dump -i eth0 -nn host 192.168.56.101 抓取主机和192.168.56.101的Tcp UDP通信信息
+ 
+ 2.dump -i eth0 -nn port 53 抓取端口53的Tcp UDP通信信息
+```
+> 如果发现配好了 不生效  请systemctl restart network
+
+* 启动好后
+
