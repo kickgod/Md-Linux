@@ -83,4 +83,19 @@ WWW 代表 www.wang.com 可以简写
 
 一行的解释:www.wang.com 在internal[网络中] 的Ip地址[Address]  为 192.168.56.101
 ```
-
+#### 5.参数说明
+* 选项： 
+* `type`: 区域类型，必选项，其值有： <br/>
+     ` Master`： 主DNS服务器 <br/>
+     ` Slave`： 从DNS服务器 <br/>
+     ` Hint`: 根名称服务器集 <br/>
+* `file`：必选项，指定具体存放DNS记录的文件，网域地区的DNS数 据库，文件路径相对于option中的directory
+* `zone 区段`：定义域名地区  <br/>
+     zone "domain _name"  IN {  <br/>
+       type master;  <br/>
+       file "filename";  <br/>
+       其他选项  <br/>
+       }  <br/>
+> 内容详解:  zone:  定义一个区域  domain _name : 定义域名  IN:   表示internet
+       
+       
