@@ -59,6 +59,7 @@ b. 转发到其它 DNS 服务器
 ``` 
 ![DNS解析图片](/Image/DNS.png)
 ### 五.Cache Only DNS服务器 Hosts文件
+> 惟缓存服务器: 不提供正向逆向地址解析,只是提供解析缓存,例如某个主机第一次访问www.wangzhe.com，本地没有地址,询问DNS服务器,然后DNS服务器查询自己或者询问其他的DNS服务器,得到地址后返回给客户机,然后自己缓存一份地址,下一次客户机再次访问www.wangzhe.com的时候,就可以快速查询缓存,解析速度更快
 #### 1. 测试 `[使用虚拟机]`
 * Virtual Box 启动两台服务器 一台Server 一台Client 
 
@@ -92,4 +93,45 @@ systemctl restart network
 ------
 * client 去 ping  www.baidus.com
 * server 去 tcpdump -i enp0s3 -nn port 53 然后可以看到服务器想DNS请求域名解析的信息了
+* yum -y install bind bind-chroot  安装DNS服务
+* vim /etc/named.conf
+``` shell
 
+#改成any 记住 
+options { listen-on port 53 { any; }; 
+listen-on-v6 port 53 { any; }; 
+directory "/var/named"; 
+dump-file "/var/named/data/cache_dump.db";
+statistics-file "/var/named/data/named_stats.txt";
+memstatistics-file "/var/named/data/named_mem_stats.txt"; 
+allow-query { any; }; 
+#重新启动 
+[root@aliyun ~]# systemctl restart named 
+[root@aliyun ~]# systemctl enable named 
+#查询端口 
+[root@aliyun ~]# ss -tuln |grep :53 |column -t udp
+UNCONN 0 0 114.215.71.214:53 *:* 
+udp UNCONN 0 0 10.29.89.165:53 *:* 
+udp UNCONN 0 0 127.0.0.1:53 *:* 
+udp UNCONN 0 0 :::53 :::* 
+tcp LISTEN 0 10 114.215.71.214:53 *:* 
+tcp LISTEN 0 10 10.29.89.165:53 *:* 
+tcp LISTEN 0 10 127.0.0.1:53 *:* 
+tcp LISTEN 0 10 :::53 :::* 
+```
+yum -y install bind-utils
+
+```
+查看 DNS 服务主配置文件
+[root@aliyun ~]# vim /etc/named.conf 根提示区域 [默认] 
+
+var/named 文件夹里面
+
+directory       "/var/named"; 存放了全球十三个顶级域名
+
+ 
+DNS 转发 Forward [通常转发到上一级的 DNS 服务器] 
+options { 
+... forwarders{ 114.114.114.114; 202.106.0.20; }; 
+};
+```
