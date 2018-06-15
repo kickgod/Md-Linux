@@ -110,6 +110,7 @@ DNS逆向解析
 #### 1.配置文件 in-addr.arpa 逆向解析
 
 ```shell
+#Ip 一定要反过来
 zone "56.168.192.in-addr.arpa" IN {
      type master; 
      file "192.268.56.wang";
@@ -127,4 +128,10 @@ $TTL 600
 
 yum -y install bind-utils 可以测试
 ```
+#### 3.自身dig 和 ping
 
+有点时候自身无法ping 通解析到自身的域名,这个时候按照如下操作
+
+-----
+* 将自己的域名服务器指向自己
+* 如果域名服务器的IP 是 192.168.56.101 那么在 DNS Server下面的 /etc/resolv.conf 里面增加一条 nameserver 192.168.56.101
