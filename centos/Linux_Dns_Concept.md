@@ -124,10 +124,14 @@ yum -y install bind-utils
 ```
 查看 DNS 服务主配置文件
 [root@aliyun ~]# vim /etc/named.conf 根提示区域 [默认] 
+zone "." IN {
+      type hint;
+      file "named.ca"
+}
 
 var/named 文件夹里面
 
-directory       "/var/named"; 存放了全球十三个顶级域名
+directory       "/var/named/named.ca"; 存放了全球十三个顶级域名
 
  
 DNS 转发 Forward [通常转发到上一级的 DNS 服务器] 
