@@ -1,5 +1,5 @@
 DNS正向解析
-====
+----
 * `正向区： 提供正向解析，即将域名解析为 IP`
 * `反向区： 提供反向解析，即将 IP 解析为域名 [了解]`
 #### 1.配置文件 加上zone 区域 
@@ -71,7 +71,7 @@ option区段：对named的基本设置，影响整个服务器的运作:
 ------
 #### 4.添加内容 
 ``` text
-
+$TTL 600
 @     IN    SOA   dns   root ( 2018061511 1H 15M 1W 1D )
 @     IN    NS    dns  
 dns   IN    A     192.168.56.101
@@ -84,6 +84,7 @@ WWW 代表 www.wang.com 可以简写
 一行的解释:www.wang.com 在internal[网络中] 的Ip地址[Address]  为 192.168.56.101
 ```
 #### 5.参数说明
+* $TTL 600
 * 选项： 
 * `type`: 区域类型，必选项，其值有： <br/>
      ` Master`： 主DNS服务器 <br/>
@@ -91,11 +92,39 @@ WWW 代表 www.wang.com 可以简写
      ` Hint`: 根名称服务器集 <br/>
 * `file`：必选项，指定具体存放DNS记录的文件，网域地区的DNS数 据库，文件路径相对于option中的directory
 * `zone 区段`：定义域名地区  <br/>
-     zone "domain _name"  IN {  <br/>
+     zone " domain_name "  IN {  <br/>
        type master;  <br/>
        file "filename";  <br/>
        其他选项  <br/>
        }  <br/>
-> 内容详解:  zone:  定义一个区域  domain _name : 定义域名  IN:   表示internet
+* CNAME: 指别名记录，也被称为规范名字。  这种记录允许您将多个名字映射到同一台计算机。        
+![别名实例](/Image/CNAME.png)
        
-       
+> 内容详解:  zone:  定义一个区域  domain_name : 定义域名  IN:   表示internet
+#### 6.重启
+* `systemctl restart named` 
+* 然后主机测试就行了
+----------------
+DNS逆向解析
+----     
+#### 1.配置文件 in-addr.arpa 逆向解析
+
+```shell
+zone "56.168.192.in-addr.arpa" IN {
+     type master; 
+     file "192.268.56.wang";
+     allow-query{ any; };
+};
+```
+#### 2.添加数据库文件
+```
+$TTL 600
+@     IN   SOA  dns.wang.com.   root.wang.com. ( 2018061500 4D 1H 1W 3H )
+      IN NS     dns.wang.com.
+101   IN PTR    dns.wang.com.
+102   IN PTR    www.wang.com.
+103   IN PTR    lab.wang.com.
+
+yum -y install bind-utils 可以测试
+```
+
