@@ -120,7 +120,7 @@ tcp LISTEN 0 10 127.0.0.1:53 *:*
 tcp LISTEN 0 10 :::53 :::* 
 ```
 yum -y install bind-utils
-
+-----
 ```
 查看 DNS 服务主配置文件
 [root@aliyun ~]# vim /etc/named.conf 根提示区域 [默认] 
@@ -135,3 +135,4 @@ options {
 ... forwarders{ 114.114.114.114; 202.106.0.20; }; 
 };
 ```
+-----
