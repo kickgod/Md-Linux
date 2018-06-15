@@ -84,6 +84,9 @@ b. 转发到其它 DNS 服务器
 
 * 修改客户机 client 的 /etc/resolv.conf 增加下面一行  其他的都注释掉 
 > nameserver server_IP `IP 为域名机 地址`
+
+#### **`nameserver 一定要顶格 前面不能有空格否则无法请求域名服务器`**
+
 -----
 * 然后修改Server etc/hosts文件 增加一行  
 > 192.168.56.110 www.baidus.com
