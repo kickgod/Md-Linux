@@ -75,6 +75,11 @@ chmod 740 filename 一次性设置文件属主 属组 其他用户的权限
 * setfacl -b /home/test.txt    //删除所有 acl 权限 
 * setfacl -x g:hr /home/test.txt    //删除组 hr 的 acl 权限 
 * setfacl -b /home/test.txt    //删除所有 acl 权限 
+
+##### setfacl: Option -m: 无效的参数 near character 3
+##### setfacl: Option -m incomplete
+##### 以上错误 用户或者用户组不存在 或者写错了名字 参数
+
 ##### 有了setfacl之后就把有些核心重要的文件归类禁止其他用户的权限这样就可以单独给一些用户设置权限.
 
 ### 4. getfacl 命令 查看文件权限信息
