@@ -104,8 +104,8 @@ cups options = raw              打印机的选项
   write	list	=	允许写⼊入该共享的用户 
   
   guest	ok	=	指定该共享是否允许guest账户访问
-  
 ```
+#####   Smaba 配置文件 写命令需要用 true/false yes/no
 **3**.建⽴立访问共享资源, 在	Linux7	系统中, `Samba`服务程序默认使⽤用的是⽤用户⼝口令认证模式,确保仅 让有密码且受信任的⽤用户访问共享资源,
 不不过需要使⽤用	pdbedit	建⽴立账户信息数据库来管理理SMB 服务程序
 
@@ -128,3 +128,42 @@ cups options = raw              打印机的选项
 ######	firewall-cmd	--permanent	--add-service=samba 
 ######	firewall-cmd	--reload
 
+##### useradd -s /sblin/nologin alice
+##### mkdir /myshare
+##### chown 766 /myshare
+##### pdbedit -a alice
+``` shell
+# See smb.conf.example for a more detailed config file or
+# read the smb.conf manpage.
+# Run 'testparm' to verify the config is correct after
+# you modified it.
+
+[global]
+        workgroup = SAMBA
+        security = user
+
+        passdb backend = tdbsam
+
+        printing = cups
+        printcap name = cups
+        load printers = yes
+        cups options = raw
+[share-samba]
+        comment= This is Share /temp
+        path= /temp
+        public = yes
+        writeable=true
+        browseable=true
+        guest ok=true
+[myshare]
+        comment = This is Share Directionary /myshare
+        path = /myshare
+        guest ok= true
+        public = yes
+        browseable = true
+        writeable = true  
+   
+```
+#### 由于是双重权限 即使用户Alice 使用setfacl 或者其他赋予读写权限  但是由于 writeable = false 那么用户同样无权限 读写文件
+#### 最后 重启一次 
+* `systemctl restart smb`
