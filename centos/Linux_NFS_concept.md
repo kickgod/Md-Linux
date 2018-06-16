@@ -71,5 +71,24 @@ Linux NFS `(Network File System/网络文件系统)`
   `no_wdelay：若有写操作则立即执行，应与sync配合使用`  <br/>
   `subtree：若输出目录是一个子目录，则nfs服务器将检查其父目 录的权限(默认设置)` <br/>
   `no_subtree：即使输出目录是一个子目录，nfs服务器也不检查 其父目录的权限，这样可以提高效率`<br/>
+#### 4.介质
+* 所有Server共享的文件都会显示在 /var/lib/nfs/etab 中 配置后查看这个里面是否有记录 配置后好了没有 请重启一下
+> `systemctl restart nfs-server`
 
-  
+### 客户端开始配置
+> 无论客户端或者其他服务端 都要安装 `yum -y install nfs-utils rpcbind`
+1. systemctl enable rpcbind
+2. systemctl start  rpcbind
+* rpcinfo -p 测试server 是否允许成功
+* exportfs -v 查看已经共享的文件配置
+* exportfs 查看已经共享文件的简略信息  
+----
+|命令|选项一|选项二|
+|--|--|--|
+| exportfs -v|共享文件目录|文件配置信息|
+|exportfs|共享文件目录|允许共享主机或者网段|
+*  #showmount –e 主机ip  、检查 NFS 服务器端是否有目录共享  
+### 错误
+* mount.nfs: access denied by server while mounting 192.168.214.3:/temp 
+1. 可能是端口大于1024的访问问题 加上参数insecure
+解决方法:/temp  192.168.214.0(insecure,rw,async,no_root_squash)
