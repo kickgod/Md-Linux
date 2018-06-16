@@ -94,6 +94,40 @@ option domain-name-server IP 地址 :为客户端指定DNS服务器地址
 
 3、为一台主机(DNS服务器)单独分配地址192.168.1.200(主机名: dns-server mac: 00:A0:78:8E:9E:AA) 
 
-4、假设DNS服务器域名为:  www.baidu.com  5、默认地址租约：1小时  最长地址租约：1天 
+4、假设DNS服务器域名为:  www.baidu.com 
+
+5、默认地址租约：1小时  最长地址租约：1天 
 
 ```
+-----
+#### 修改配置文件
+```shell
+VIM /etc/dhcp/dhcpd.conf  
+default-lease-time   3600;  
+max-lease-time       86400;
+#optiondomain-name “baidu.com”;  
+#设置了DNS再使用 
+#optiondomain-name-servers 192.168.1.200; 
+ 
+ subnet 192.168.0.0 netmask 255.255.255.0 {  #动态分配ip 
+ option routers 192.168.1.100; 
+ range  192.168.1.110    192.168.1.120;    
+ } 
+ host dns-server{    
+ #Mac 地址为00:A0:78:8E:9E:AA的主机指定ip 
+ hardware ethernet 00:A0:78:8E:9E:AA;  
+ fixed-address 192.168.1.200; 
+ }
+```
+#### 配置DHCP服务器主机的网卡，设置：IP为静态地址,其值为： 192.168.1.100, 子网掩码为255.255.255.0  [非常重要]
+----
+```shell
+   vim /etc/sysconfig/network-script/if....
+   BOOTPROTO=static
+   IPADDR=192.168.1.100
+   NETMASK=255.255.255.0
+```
+#### 关闭 防火墙 打开服务 
+* `systemctl restart network`
+* `systemctl restart dhcpd`
+### 配置完成 打开host-only或者同一网段主机  ip addr 就可以看到它具有IP地址了
