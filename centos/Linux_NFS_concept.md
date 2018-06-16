@@ -79,15 +79,25 @@ Linux NFS `(Network File System/网络文件系统)`
 > 无论客户端或者其他服务端 都要安装 `yum -y install nfs-utils rpcbind`
 1. systemctl enable rpcbind
 2. systemctl start  rpcbind
-* rpcinfo -p 测试server 是否允许成功
-* exportfs -v 查看已经共享的文件配置
-* exportfs 查看已经共享文件的简略信息  
+3. vim /etc/exports `/temp  192.168.214.0(insecure,rw,async,no_root_squash)`
+4.chmod 777 /temp
+5.重启nfs-server
+6.关闭 setenforce 0
+7.systemctl stop firewall
+8. rpcinfo -p 测试 server 是否允许成功
+9. exportfs -v 查看已经共享的文件配置
+10. exportfs 查看已经共享文件的简略信息  
 ----
 |命令|选项一|选项二|
 |--|--|--|
 | exportfs -v|共享文件目录|文件配置信息|
 |exportfs|共享文件目录|允许共享主机或者网段|
-*  #showmount –e 主机ip  、检查 NFS 服务器端是否有目录共享  
+####showmount –e 主机ip、检查 NFS 服务器端是否有目录共享  
+11.showmount -e 192.168.214.3
+挂载文件
+1. /mkdir /mnt/nfs 
+2. mount -t nfs 192.168.214.3:/temp /mnt/nfs
+3. df -h 查看挂载结果
 ### 错误
 * mount.nfs: access denied by server while mounting 192.168.214.3:/temp 
 1. 可能是端口大于1024的访问问题 加上参数insecure
