@@ -17,15 +17,15 @@ FTP是⼀一个应⽤用程序, 基于客户端/服务器器模式，默认使�
 1. 配置文件位置: cat /etc/vsftpd/vsftpd.conf
 [root@ftp-server	~]#	cat	/etc/vsftpd/vsftpd.conf
 #### 参数解释
-1. **`anonymous_enable=YES`**									`是否启⽤用匿匿名⽤用户` 
-2. **`local_enable=YES`**											`是否启动本地⽤用户` 
+1. **`anonymous_enable=YES`**									`是否启用匿名用户` 
+2. **`local_enable=YES`**											`是否启动本地用户` 
 3. **`write_enable=YES`**											`开启全局上传⽂文件` 
 4. **`local_umask=022`**											`控制本地用户上传文件默认权限 ,	umask 表示要减掉的权限` 
 5. **`anon_umask=022`**												`控制匿名用户上传文件的默认权限` 
-6. `anon_upload_enable=YES`								`允许匿名用户上传` 
+6. `anon_upload_enable=YES`								  `允许匿名用户上传` 
 7. `anon_mkdir_write_enable=YES`					  `允许创建目录` 
 8. `dirmessage_enable=YES`									`配置用户目录显示信息` 
-9. `xferlog_enable=YES`										`启动日志`
+9. `xferlog_enable=YES`										 `启动日志`
 10. `xferlog_file=/var/log/vsftpd.log`      `指定日志位置，配置 xferlog_enable 使用` 
 11. `connect_from_port_20=YES` 
 12. `xferlog_std_format=YES` 
@@ -47,3 +47,45 @@ FTP是⼀一个应⽤用程序, 基于客户端/服务器器模式，默认使�
 26. `local_max_rate=800000`			   `本地用户限速` 
 27. `max_clients=100`							 `同时能接收多少请求` 
 28. `max_per_ip=2`									`一个 ip 同时能有多少连接`
+
+-----
+#### 匿名用户 -1、	允许匿名用户登录/ftp/open并下载文件
+
+##### 实验环境
+1. Server IP 192.168.214.3
+2. client Win7 
+3. client IP 192.168.214.4
+4. 安装好vsftp 后更改配置文件vim  /etc/vsftpd/vsftpd.conf 
+```shelll
+ anonymous_enable=YES                    启用匿名用户
+ anon_max_rate=5000000                   匿名用户限速 5M/s最大
+ anon_upload_enable=NO								   不允许匿名用户上传 
+ anon_mkdir_write_enable=NO 					   不允许创建目录 
+ 
+```
+5. 重启 systemctl restart vsftpd
+###### 注意:即使赋予了可以上传创建目录的权限 如果不在linux内部文件赋予权限同样无法修改 双重权限设置
+6. 完成使用例如win7 测试 ftp://192.168.214.3 就可以看见文件夹 并且下载 但是不能上传
+#### 2.匿名用户 -2 可读可写可创建
+1. 修改默认 ftp 共享⽬目录站点权限，最后重新加载 vsftpd 服务 
+2. [root@ftp-server	~]#	chmod	-R	777	/var/ftp/
+3. [root@ftp-server	~]#	systemctl	restart	vsftpd
+4. 或者 chown ftp.ftp /vat/ftp 
+#### 3.测试工具 Linux 下使⽤用 lftp 客户端⼯工具访问 vsftpd 服务验证，安装此工具 
+1. `yum	install	lftp	-y`
+2. `lftp	192.168.56.11` 连接ftp
+3. 测试命令  `mkdir` 创建目录 `rm` 删除 [lftp命令](https://blog.csdn.net/lockey23/article/details/76284366) [left命令详解](http://man.linuxde.net/lftp)
+##### 赋予ftp服务权限
+4. vim  /etc/vsftpd/vsftpd.conf 
+```shel
+ anonymous_enable=YES                    启用匿名用户
+ anon_max_rate=5000000                   匿名用户限速 5M/s最大
+ anon_upload_enable=YES								   
+ anon_mkdir_write_enable=YES 					  
+ 
+``` 
+##### 赋予文件权限
+5. [root@localhost ~]# chown ftp.ftp /var/ftp **`如果不-R 那么无法写ftp 内部的子文件`**
+6. [root@localhost ~]# chown -R  ftp.ftp /var/ftp **`拥有子文件读写权限`**
+7. chmod -R 777 /var/ftp 同样可以达到目的
+8. 重启测试 systemctl restart vsftpd
