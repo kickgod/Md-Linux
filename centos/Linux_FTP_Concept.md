@@ -10,6 +10,7 @@ FTP是⼀一个应⽤用程序, 基于客户端/服务器器模式，默认使�
 以及断点续传技术，因此FTP服务得到了了⼴广⼤大⽤用户的⻘青睐
 ### 1.安装
 1. 安装包 yum -y install vsftpd db4-utils
+> db4-utils 安装没有包 请修改yum源 指向阿里云yum源 
 2. systemctl start vsftpd 启动
 3. systemctl enable vsftpd 设置开机自启动
 > 默认使用匿名用户访问共享目录站点为 /var/ftp 仅仅拥有下载权限
@@ -89,3 +90,20 @@ FTP是⼀一个应⽤用程序, 基于客户端/服务器器模式，默认使�
 6. [root@localhost ~]# chown -R  ftp.ftp /var/ftp **`拥有子文件读写权限`**
 7. chmod -R 777 /var/ftp 同样可以达到目的
 8. 重启测试 systemctl restart vsftpd
+-----
+#### 本地用户 默认就有上传下载权限
+1. 修改配置文件 支持本地用户
+```shell
+# vim /etc/vsftpd/vsftp.conf
+   guest_enable=YES                      #实体用户均被假设成‘guest’登录
+   guest_username=virtftp                #这个‘guest’被映射为本地的‘virtftp’用户
+   pam_service_name=vsftpd               #设置在PAM所使用的名称，默认值为vsftpd
+   user_config_dir=/etc/vsftpd/virt_dir  #虚拟用户的单独配置信息设置放在/etc/vsftpd/virt_dir下
+```
+
+```
+[root@ftp-client	~]#	lftp	192.168.56.11 
+lftp	192.168.56.11:~>	login	ftp_test	123 
+lftp	ftp_test@192.168.56.11:/>	mkdir	ftp 
+[root@ftp-server	~]#	ls	/home/ftp_test
+```
