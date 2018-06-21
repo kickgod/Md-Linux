@@ -41,7 +41,7 @@ option区段：对named的基本设置，影响整个服务器的运作:
 #### 2.添加域数据库文件
 > 这个数据文件必须添加到var/named里面
 ```
- vim /etc/named/wang.com.zone
+ vim /var/named/wang.com.zone
  第一行 @ 代表: wang.com. @  IN  SOA  dns root ( 20180615001H 15M 1W 1D )
  
  #注意空格隔开
