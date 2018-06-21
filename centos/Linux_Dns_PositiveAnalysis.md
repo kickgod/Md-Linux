@@ -118,6 +118,7 @@ zone "56.168.192.in-addr.arpa" IN {
 };
 ```
 #### 2.添加数据库文件
+##### vim /var/named/192.268.56.wang
 ```
 $TTL 600
 @     IN   SOA  dns.wang.com.   root.wang.com. ( 2018061500 4D 1H 1W 3H )
