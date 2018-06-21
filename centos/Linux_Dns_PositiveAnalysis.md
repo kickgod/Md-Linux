@@ -136,3 +136,4 @@ yum -y install bind-utils 可以测试
 * 将自己的域名服务器指向自己
 * 如果域名服务器的IP 是 192.168.56.101 那么在 DNS Server下面的 /etc/resolv.conf 里面增加一条 <br/>
 nameserver 192.168.56.101
+* 配置文件一定要定格写
