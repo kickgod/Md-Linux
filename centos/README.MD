@@ -15,3 +15,5 @@ CentOS7 学习笔记
   
 * `Apache配置 部署网站:` [1.Apache默认部署](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Apache01.md) 
 [2.Apache网站部署](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Apache_Anything.md) 
+* `Apache配置 部署网站:` [1.DNS简介](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Dns_Concept.md) 
+[2.DNS详解](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Dns_PositiveAnalysis.md) 
