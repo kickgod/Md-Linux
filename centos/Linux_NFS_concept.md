@@ -92,7 +92,7 @@ Linux NFS `(Network File System/网络文件系统)`
 |--|--|--|
 | exportfs -v|共享文件目录|文件配置信息|
 |exportfs|共享文件目录|允许共享主机或者网段|
-####showmount –e 主机ip、检查 NFS 服务器端是否有目录共享  
+#### showmount –e 主机ip、检查 NFS 服务器端是否有目录共享  
 11.showmount -e 192.168.214.3
 挂载文件
 1. /mkdir /mnt/nfs 
