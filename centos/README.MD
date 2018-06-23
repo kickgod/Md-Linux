@@ -16,7 +16,7 @@ CentOS7 学习笔记
 * 3 .[文件查询和打包-3](https://github.com/kickgod/Md-Linux/tree/master/centos)
   * A. [文件查找-1](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_file_serarch.md)
 * 4 .[软件包管理-4](https://github.com/kickgod/Md-Linux/tree/master/centos)
-  * A. [yum 概念](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_yum_simple.md)
+  * A. [yum 概念-1](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_yum_simple.md)
 ### 服务配置
 * `Apache配置 部署网站:` [1.Apache默认部署](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Apache01.md) 
 [2.Apache网站部署](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Apache_Anything.md) 
