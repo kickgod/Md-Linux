@@ -10,8 +10,8 @@ CentOS7 学习笔记
   * E. [文件权限-E](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_file_Ugo1.md)
 * 2 .[用户管理-2](https://github.com/kickgod/Md-Linux/tree/master/centos)
   * A. [用户认识-A](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_user_concept.md)
-  * B. [用户简记-B](ttps://github.com/kickgod/Md-Linux/blob/master/centos/Linux_user_Group_simple.md)
-  * C. [用户文件权限-B](ttps://github.com/kickgod/Md-Linux/blob/master/centos/Linux_file_Ugo1.md)
+  * B. [用户简记-B](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_user_Group_simple.md)
+  * C. [用户文件权限-B](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_file_Ugo1.md)
 
 ### 服务配置
 * `Apache配置 部署网站:` [1.Apache默认部署](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Apache01.md) 
