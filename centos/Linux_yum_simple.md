@@ -13,4 +13,4 @@ Yum 按照简介
 1. `yum provides locate` 查看locate命令属于哪个包 <br/>
 
 -----
-[1. 阿里云Linux yum源](https://opsx.alibaba.com/mirror)  [2. 清华Yum 源](https://mirrors.tuna.tsinghua.edu.cn/) [3. 163 yum源](http://mirrors.163.com/)
+[ 1. 阿里云Linux yum源](https://opsx.alibaba.com/mirror)  [  2. 清华Yum 源](https://mirrors.tuna.tsinghua.edu.cn/) [  3. 163 yum源](http://mirrors.163.com/)
