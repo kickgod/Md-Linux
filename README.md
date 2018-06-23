@@ -24,7 +24,7 @@ Linux学习笔记
 > `利用shell 脚本封装命令一次性完成各种复制操作 配合计划进程 完成Linux的自动管理和维护报告等等 power shell 更为强大`
 ---------
 
-#### Linux 安装插件
+### 三 .Linux 常见插件安装
 * `tree`  `yum -y install tree` 树形展示目录结构
 * `tcpdump`  `yum -y install tcpdump` 根据使用者的定义对网络上的数据包进行截获的包分析工具
 * `htop` `yum -y install htop`  动态监视进程系统运行
