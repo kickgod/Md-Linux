@@ -8,8 +8,8 @@ FTP是一个应用程序, 基于客户端/服务器器模式，默认使⽤用`T
 #### 优点
 `FTP`服务端通常部署在企业内⽹网, 具有容易易搭建、⽅方便便管理理、安全稳定等特征。 ⽽而且有些FTP客 户端⼯工具⽀支持⽂文件的多点下载
 以及断点续传技术，因此FTP服务得到了了⼴广⼤大⽤用户的⻘青睐
-#### hostnamectl set-hostname ftp-server  修改服务端 服务器名称
-#### hostnamectl set-hostname ftp-client  修改客户端 服务器名称
+##### hostnamectl set-hostname ftp-server  修改服务端 服务器名称
+##### hostnamectl set-hostname ftp-client  修改客户端 服务器名称
 ### 1.安装
 1. 安装包 yum -y install vsftpd db4-utils
 > db4-utils 安装没有包 请修改yum源 指向阿里云yum源 
