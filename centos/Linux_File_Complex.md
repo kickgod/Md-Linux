@@ -35,3 +35,7 @@ f - 普通文件。
 ### grep 过滤输出
 * grep 'root' /etc/passwd
 ---
+### echo 
+* echo 'asdasd' > user.txt 覆盖文本
+* echo 'asdasd' >> user.txt 追加文本
+---
