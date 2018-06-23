@@ -11,3 +11,6 @@ Yum 按照简介
 ----
 #### 命令简介
 1. `yum provides locate` 查看locate命令属于哪个包 <br/>
+
+-----
+[1.阿里云Linux yum源](https://opsx.alibaba.com/mirror)  [2.清华Yum 源](https://mirrors.tuna.tsinghua.edu.cn/)
