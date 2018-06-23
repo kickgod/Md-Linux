@@ -12,7 +12,8 @@ CentOS7 学习笔记
   * A. [用户认识-A](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_user_concept.md)
   * B. [用户简记-B](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_user_Group_simple.md)
   * C. [用户文件权限-B](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_file_Ugo1.md)
-
+* 3 .[文件查询和打包-3](https://github.com/kickgod/Md-Linux/tree/master/centos)
+  * A. [文件查找-1](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_file_serarch.md)
 ### 服务配置
 * `Apache配置 部署网站:` [1.Apache默认部署](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Apache01.md) 
 [2.Apache网站部署](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Apache_Anything.md) 
