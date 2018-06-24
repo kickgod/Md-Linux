@@ -30,3 +30,5 @@ Linux学习笔记
 * `htop` `yum -y install htop`  动态监视进程系统运行
 * `vim` `yum -y install vim`  vim编辑器
 * `vim-enhance` `yum -y install vim-enhance`  Vim颜色增强
+
+-----------------

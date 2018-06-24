@@ -17,8 +17,36 @@ Yum 按照简介
 * 主要获得 RPM 包途径：
 
 ----
-#### 命令简介
+#### 命令简介 yum(选项)(参数)
 1. `yum provides locate` 查看locate命令属于哪个包 <br/>
+2. `yum list name` 查看包 <br/>
+``` vim
+-h：显示帮助信息；
+-y：对所有的提问都回答“yes”；
+-c：指定配置文件；
+-q：安静模式；
+-v：详细模式；
+-d：设置调试等级（0-10）；
+-e：设置错误等级（0-10）；
+-R：设置yum处理一个命令的最大等待时间；
+-C：完全从缓存中运行，而不去下载或者更新任何头文件。
+```
+```
+install：安装rpm软件包；
+update：更新rpm软件包；
+check-update：检查是否有可用的更新rpm软件包；
+remove：删除指定的rpm软件包；
+list：显示软件包的信息；
+search：检查软件包的信息；
+info：显示指定的rpm软件包的描述信息和概要信息；
+clean：清理yum过期的缓存；
+shell：进入yum的shell提示符；
+resolvedep：显示rpm软件包的依赖关系；
+localinstall：安装本地的rpm软件包；
+localupdate：显示本地rpm软件包进行更新；
+deplist：显示rpm软件包的所有依赖关系。
+```
+
 
 ### 配置阿里云 基础yum源
 * 1.备份Yum配置文件 <br/>
@@ -41,5 +69,10 @@ Yum 按照简介
  `如果没有epel源 在/etc/yum.repos.d中没有epel.repo 那么直接`<br/>
  `wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo`<br/>
  `如果有epel 需要改的话 那么先备份就行`
+3. 安装好后 使用[yum repolist](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_yum_simple.md) 可以看到一个新的 yum源 `epel/x86_64`   并且多出了一万多个包
 -----
+### yum epel的缺点 
+1. 官方epel的包版本常常不是最新的，例如nginx epel包里面是1.1.12版本的时候, 官网已经是1.1.15版本
+### 
+----
 [ 1. 阿里云Linux yum源](https://opsx.alibaba.com/mirror)  [  2. 清华Yum 源](https://mirrors.tuna.tsinghua.edu.cn/) [  3. 163 yum源](http://mirrors.163.com/)
