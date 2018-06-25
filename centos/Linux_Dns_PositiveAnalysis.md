@@ -1,3 +1,5 @@
+### 安装 yum -y install bind 
+### 测试程序 yum -y install bind-utils
 DNS正向解析
 ----
 * `正向区： 提供正向解析，即将域名解析为 IP`
