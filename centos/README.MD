@@ -26,7 +26,7 @@ CentOS7 学习笔记
 
 * `Samba信息服务块:` [1.Smaba服务](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_Samba_Concept.md) 
 
-* `NFS网络文件系统:` [1.Smaba网络文件系统](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_NFS_concept.md) 
+* `NFS网络文件系统:` [1.NFS网络文件系统](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_NFS_concept.md) 
 
 * `DHCP服务器:` [1.DHCP 动态主机配置协议配置](https://github.com/kickgod/Md-Linux/blob/master/centos/Linux_DHCP_concept.md)
 
