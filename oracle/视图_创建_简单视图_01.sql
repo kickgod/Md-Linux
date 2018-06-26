@@ -5,3 +5,9 @@ as
 */
 -- force 表示要创建视图的表不存在也要创建视图
 -- noforce 表示表不存在无法创建视图
+
+create or replace view stuinfo
+as
+select * from  Student inner join SC on SC.SNO=STUDENT.SNO;
+
+

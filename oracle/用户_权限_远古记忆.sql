@@ -6,7 +6,7 @@
    对象权限又八种  增删改查 sel,ins,upd,de 和执行execute 修改alter 索引index 关联references
  */
  
-  --grant 权限,... To [用户名. |角色名,...| public]
+  grant 权限,... To [用户名. |角色名,...| public]
   [with admin option];--将用户授予的权限继续授予其他用户
   --public 将使用Public 将此权限设置为公共权限；
   

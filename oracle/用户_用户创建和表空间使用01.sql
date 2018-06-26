@@ -13,8 +13,9 @@
   CREATE tablespace  Mydb
   datafile 'E:\TableSpace\mydb_datafile.dbf' size 64M
   autoextend on next 5M
-  Logging
-  数据库操作_表定义_01.sql
+  Logging;
+  
+  --数据库操作_表定义_01.sql
   
   /*查看表空间*/
   select * from dba_tablespaces;

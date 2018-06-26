@@ -32,3 +32,46 @@ ORA-04088: 触发器 'C##KICKER.CHANGE_TB_RECORD' 执行过程中出错
   end;
 
 -- E  此表达式的类型声明不完整或格式不正确 原因:名称写错了
+
+错误(7,4): PLS-00103: 出现符号 "end-of-file"在需要下列之一时：  ;    <an identifier> <a double-quoted delimited-identifier>    current delete exists prior <加单引号的 SQL 字符串> 符号 ";" 被替换为 "end-of-file" 后继续。 
+-- 原因: 子程序end后面没有加 ; 符号; 
+
+-- G 对于字符串比较 char与varchar 比较要是有trim
+
+  select count(*)  from SC where SNO ='008';
+-- 使用select  会自动去除空格  但是使用函数 存储过程却不会 谨记
+
+
+PLS-00320: 此表达式的类型声明不完整或格式不正确 Rowtype 写成了 type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,11 @@ rename ITusers  to Users;
 --ÐÞ¸ÄÁÐÃû³Æ 
 alter table TABLE_NAME rename column FIELD_NAME to NEW_FIELD_NAME;
 
+-- modify 
+alter table tablename modify (column datatype [default value][null/not null],¡­.);
+
+
+
 
 select *from ITUSERS;
 
