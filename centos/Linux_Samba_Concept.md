@@ -183,3 +183,6 @@ cups options = raw              打印机的选项
 * **第二部 创建目录**
 * `mkdir /cifs`
 * `mount -t cifs -o user=bgx,pass=123 //192.168.218.128/smb   /cifs` 完成挂载
+* **永久挂载**
+* vim /etc/fstab
+* `//192.168.68.112/smb  /cifs   cifs user=bgx,pass=123  0  0` 加上一行就可以了
