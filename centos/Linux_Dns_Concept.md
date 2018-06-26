@@ -122,7 +122,8 @@ tcp LISTEN 0 10 10.29.89.165:53 *:*
 tcp LISTEN 0 10 127.0.0.1:53 *:* 
 tcp LISTEN 0 10 :::53 :::* 
 ```
-yum -y install bind-utils
+### 六.下载yum -y install bind-utils
+
 -----
 ```
 查看 DNS 服务主配置文件
