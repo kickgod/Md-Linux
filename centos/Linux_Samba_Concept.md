@@ -167,3 +167,19 @@ cups options = raw              打印机的选项
 #### 由于是双重权限 即使用户Alice 使用setfacl 或者其他赋予读写权限  但是由于 writeable = false 那么用户同样无权限 读写文件
 #### 最后 重启一次 
 * `systemctl restart smb`
+
+-----
+### windows 访问挂载
+* **第一步最重要的** 启用Windows的网络发现和文件共享 `控制面板\网络和 Internet\网络和共享中心\高级共享设置`  启动网络发现
+* 直接输入Ip地址然后输入密码账号就可以了
+*  **第二步** 映射网络驱动器
+* 直接点开计算机 上方菜单栏 点击就可以
+* 随便给一个驱动编号,然后输入 \\smb服务主机IP\共享目录 确认就可以了
+### linux 访问挂载
+* **第一步 最重要** `yum -y install samba-client cifs-utils`  安装samba客户端
+* 访问命令 smbclient -L 192.168.218.128 链接过去  如果不输入密码 账号就是匿名登陆
+* 访问命令 smbclient -L 192.168.218.128 -u bgx 在输入密码 即可
+* 访问命令 smbclient -L 192.168.218.128 -u bgx%123 账户密码访问 %隔开
+* **第二部 创建目录**
+* `mkdir /cifs`
+* `mount -t cifs -o user=bgx,pass=123 //192.168.218.128/smb   /cifs` 完成挂载
