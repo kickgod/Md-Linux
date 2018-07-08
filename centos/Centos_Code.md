@@ -105,6 +105,24 @@ Linux 命.令
   * -l   `统计文件中的行数 `
   * -c   `统计文件中的字符个数` 
   * -w   `统计文件中的单词个数` 
-#### 解压打包 vf 常在 x解压 c 打包
-* 解包：#tar xvf FileName.tar `解压`
-* 打包：#tar cvf FileName.tar DirNam  `compression 压缩`
+#### 解压打包 zvf 常在 x解压 c 打包
+##### tar
+* 解包：#tar xzvf FileName.tar `解压`
+* 打包：#tar czvf FileName.tar DirNam  `compression 压缩`
+#### gzip
+`压缩时不会占用太多CPU，而且可以得到一个非常理想的压缩率`
+`命令格式： gzip [参数] [文件或者目录]`
+* 压缩打包文件： # gzip test.tar  #压缩产生test.tar.gz 
+* 解压：  # gzip –d archive_name.gz
+#### 增强bach自动补齐
+**`yum -y install bash-completion  bash-completion-extras`**
+#### dd 命令 
+> dd：用指定大小的块拷贝一个文件，拷贝的同时进行指定的转换 
+* 将本地的/dev/sdb1整盘备份到/root/image  #dd if=/dev/sdb1 of=/root/image 
+* 将备份文件恢复到指定盘  #dd if=/root/image of=/dev/hdb
+#### /dev/null 
+* `空设备通常被用于丢弃不需要的输出流`
+* `空设备作为用于输入流的空文件` 
+* `这些操作通常由重定向完`
+####  /dev/zero 是一个特殊的文件
+读它的时候，它会提供无限的空字符(NULL, ASCII NUL, 0x00) 
