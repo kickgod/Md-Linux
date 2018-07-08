@@ -11,7 +11,7 @@ Linux文件权限 Ugo<一>
 * \# chown alice.hr file1   //`改属主、属组 属主变为alice 属组变为hr `
 * \# chown alice file1    //`只改属主  更改属主 alice`  
 * \# chown .hr file1    //`只改属组    更改属组为`
-* chgrp groupName [/path/]filename  修改文件属组
+* chgrp groupName [/path/]filename  修改文件属组  chgrp alice /home/kicker 将后面的所属组变成alice
 * -R 参数  如果加上 则递归子文件改变  属组或者属主
 ### 2. chmod 改变权限
 ``` shell
