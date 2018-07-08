@@ -35,7 +35,7 @@ Linux 用户和用户组 <零> 简记
  > * -r 删除用户极其主目录  userdel -r Kicker 还有邮件目录 /var/spool/mail/Kicker
  ```Shell
  #不能删除一个已登陆进系统的账户  删除账号前，必须先杀死属于指定账号的运行进程 
- ps  -aux | grep 'u1' 或者 
+ ps  -aux | grep 'u1' 查询
  find / -user username 
  kill -9 pid
  ```
