@@ -62,10 +62,10 @@ Linux Vim 的使用 自助记忆
 ```
 ---
 ### 无. 查找替换 语法: [行号开始 行号结束]/[%] s/匹配/替换结果/[g] 
-* 1. `1,5 s/root/JiangXing/g`    将1~5行的root 全部换成JIanXing 全局匹配 
-* 2. `2,$ s/root/JiangXing/`     将1~5行中每一行的第一个root换成JiangXing **$表示最后一行**
-* 3. `% s/root/JiangXing/`       将所行中的每一行的第一个root换成JiangXing **%表示所有行**
-* 4. `5,10 s/.*/#&/` 将5~10行前面加一个#   **&表示匹配到的内容**
+* 1.`1,5 s/root/JiangXing/g`    将1~5行的root 全部换成JIanXing 全局匹配 
+* 2.`2,$ s/root/JiangXing/`     将1~5行中每一行的第一个root换成JiangXing **$表示最后一行**
+* 3.`% s/root/JiangXing/`       将所行中的每一行的第一个root换成JiangXing **%表示所有行**
+* 4.`5,10 s/.*/#&/` 将5~10行前面加一个#   **&表示匹配到的内容**
 > 请不要按 / 然后输入命令
 > 请在命令模式下进行  返回 按: 才会生效
 ---
