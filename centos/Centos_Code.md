@@ -85,18 +85,18 @@ Linux 命.令
   * #ls test | cat 
   * #ls test | xargs cat  #cat test  
 ```
-  1.txt 文件中有三个字符串 111 222 333 
-  cat 1.txt | xargs  echo 
-  输出:111 222 333 
-  
-  cat 1.txt | xargs  echo 
-  输出
-  cat: 111:: No such file or directory
-  cat: 222:: No such file or directory
-  cat: 333:: No such file or directory
+    1.txt 文件中有三个字符串 111 222 333 
+    cat 1.txt | xargs  echo 
+    输出:111 222 333 
 
- cat 查看文件
- 解释: xargs  是一个输出一个输出的传输
+    cat 1.txt | xargs  echo 
+    输出
+    cat: 111:: No such file or directory
+    cat: 222:: No such file or directory
+    cat: 333:: No such file or directory
+
+   cat 查看文件
+   解释: xargs  是一个输出一个输出的传输
 ```
 * #echo "--help" | cat 
 * #echo "--help" | xargs cat
@@ -105,4 +105,6 @@ Linux 命.令
   * -l   `统计文件中的行数 `
   * -c   `统计文件中的字符个数` 
   * -w   `统计文件中的单词个数` 
- 
+#### 解压打包 vf 常在 x解压 c 打包
+* 解包：#tar xvf FileName.tar `解压`
+* 打包：#tar cvf FileName.tar DirNam  `compression 压缩`
