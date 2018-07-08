@@ -41,5 +41,68 @@ Linux 命.令
 * shutdown –r now  #重启计算机 
 * shutdown –h 17:00  # 下午5点关机并关闭电
 #### 查看系统运行级别
-----
 **`命令:runlevel`**
+#### 复制文件
+* cp [option] [源文件或目录] [目标文件或目录] 
+  * `-i` : `如果文件将会覆盖你的目标中的文件，提示确认。` 
+  * `-r` : `递归复制整个目录树、子目录及其它，此时目标文件必须是一个 目录名` 
+  * `-v` : `详细显示文件的复制进度`
+#### 删除文件
+* rm [option]  filename 
+  * -i: interactive 确认删除，避免误删文件。
+  * -f : force  强制删除,不提示地删除 
+  * -v: view  显示文件的删除进度。  
+  * -r : recursion 递归删除
+#### 双向重定向保存文档 
+>  同时将数据流发送到文件和屏幕（标准输出）  **tee**
+* #cat 1.txt | tee 3.txt 完成后3.txt会有1.txt的内容
+#### 文件链接
+> `在Linux的文件系统中，保存在磁盘分区中的文件不管是什么类型都 给它分配一个编号，称为索引节点号(Inode Index)。` 
+* 1、硬连接(Hard link)： 
+  * 多个文件名指向同一索引节点, 这种连接就是硬连接 
+  * 作用：允许一个文件拥有多个有效路径名，以防止‚误删 
+  * 只有当所有硬连接被删除后，文件的数据块及目录的连接才会被释放  
+```
+建立硬链接【In 命令】: ln  /var/www/html/test.css    /root/linktest 
+```
+* 2.软连接(Soft link)：   
+  * 软链接文件即快捷方式 
+  * 它是一个特殊的文件,其中包含的有另一文件的位置信息 
+```
+建立软链接【In 命令 -s 表示软链接】: ln -s /var/www/html/test.css    /root/linktest 
+```
+#### 查看或者合并文件 cat
+* cat [选项] [文件名] 
+  * 1.一次显示整个文件   # cat file1 
+  * 2.从键盘创建一个文件  # cat > file1      
+  * 只能创建新文件,不能编辑已有文件    [Ctrl ]+D 退出创建 
+  * 3.将几个文件合并为一个文件：  #cat file1 file2 > file3 
+  * 4.向已有文件追加内容  #cat 'aabb' >> file3 
+  * 5.重定向输入已有文件  #cat > file1 << EOF 
+#### 管道(pipes) :  | 
+> `把前一个命令的标准输出作为下一个命令的标准输入. `
+* (管道)参数传递命令：xargs 
+  * #ls test | cat 
+  * #ls test | xargs cat  #cat test  
+```
+  1.txt 文件中有三个字符串 111 222 333 
+  cat 1.txt | xargs  echo 
+  输出:111 222 333 
+  
+  cat 1.txt | xargs  echo 
+  输出
+  cat: 111:: No such file or directory
+  cat: 222:: No such file or directory
+  cat: 333:: No such file or directory
+
+ cat 查看文件
+ 解释: xargs  是一个输出一个输出的传输
+```
+* #echo "--help" | cat 
+* #echo "--help" | xargs cat
+#### 查看文件中的行数、字数和字符数 
+* wc  [文件名] 
+  * -l   `统计文件中的行数 `
+  * -c   `统计文件中的字符个数` 
+  * -w   `统计文件中的单词个数` 
+ 
