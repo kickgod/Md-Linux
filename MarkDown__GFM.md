@@ -1,4 +1,4 @@
-Github Flavored Markdown 语法
+Github Flavored Markdown [语法](https://github.com/guodongxiaren/README)
 -----
 > **`Github 扩展MarkDown`**  
 ----
