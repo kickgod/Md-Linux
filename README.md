@@ -13,7 +13,7 @@ Linux学习笔记
 2. [Vim编辑器的使用记录](https://github.com/kickgod/Md-Linux/blob/master/Linux_Vim.md) 
 > `Vim普遍被推崇为类Vi编辑器中最好的一个，事实上真正的劲敌来自Emacs的不同变体。1999 年Emacs被选为Linuxworld文本编辑分类的优胜者，Vim屈居第二。但在2000年2月Vim赢得了Slashdot Beanie的最佳开放源代码文本编辑器大奖，又将Emacs推至二线， 总的来看， Vim和Emacs在文本编辑方面都是非常优秀的`
 ----
-3. [Git使用 命令记录](https://github.com/kickgod/Md-Linux/blob/master/Git_Code.md)
+3. [Git使用 命令记录](https://github.com/kickgod/Md-Linux/blob/master/Git/README.md)
 > `Git(读音为/gɪt/。)是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。 [1]  Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。当今已经成为每一个程序员必备的技能`
 ---
 4. [Visual Studio Code学习记录](https://github.com/kickgod/Md-Linux/tree/master/vscode)
