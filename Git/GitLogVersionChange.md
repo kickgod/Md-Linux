@@ -5,6 +5,8 @@
 - [x] :maple_leaf: <a href="#GITLOG">`Git log`</a>
 - [x] :maple_leaf: <a href="#GitResethardhead">`版本回退命令`</a>
     - <a href="#GotRElog">`全部回退历史`</a>
+    - <a href="#CheXiaoZheciGG">`撤销本次工作区尚未提交的更改`</a>
+    - <a href="#CheXiaoZanCunQuGG">`撤销本次暂存区尚未提交的更改`</a>
 
 
 ####  <a id="GITLOG" href="#GITLOG">Git log 命令 </a>  :star2: <a href="#top"> :arrow_up: </a>
@@ -49,4 +51,34 @@ d93e406 (HEAD -> master, origin/master, origin/HEAD) HEAD@{4}: commit: 第三次
 943413e HEAD@{5}: commit: second Commit
 5a50afc HEAD@{6}: clone: from https://github.com/KikcerGoer/GitLearing.git
 ```
+#####  <a id="CheXiaoZheciGG" href="#CheXiaoZheciGG">撤销本次工作区尚未提交的更改 </a>  :star2: <a href="#top"> :arrow_up: </a>
+`有时候,我们更改了文件在工作区,但是还没有提交到暂存区,和本地仓库,那么我们可以使用一个命令撤销本次对于一个文件的修改` <br/>
+```C#
+//当我们对文件做了修改以后,如果要撤销此次更改可以使用 git checkout 命令
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
 
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Kicker.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+**`git Checkout`**:`撤销工作区的所有更改`<br/>
+**`git Checkout --filename.xxx`**:`撤销工作区的某一个文件的更改`<br/>
+
+#####  <a id="CheXiaoZanCunQuGG" href="#CheXiaoZanCunQuGG">撤销本次暂存区尚未提交的更改 </a>  :star2: <a href="#top"> :arrow_up: </a>
+* `如果你已经git add 了将你的改变提交到暂存区,那么怎么回到原始版本呢,这个时候一个Git Checkout的命令就不够了`
+  * `第一步：将暂存区的内容reset到上个版本的最新内容 撤销更改`
+  * `第二部：将工作区使用checkout 回到上个版本的最新内容 撤销更改` 
+```C#
+git reset HEAD;  //全部暂存区文件返回原来版本
+git reset HEAD --filename.xx; //撤销某一个文件在暂存区的更改
+
+git checkout ;//全部工作区文件返回原来版本
+git checkout --filename.xx; //撤销某一个文件在工作区的更改
+```
