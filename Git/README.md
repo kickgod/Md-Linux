@@ -4,7 +4,7 @@
 
 - [x] :maple_leaf: [ Github 快速个人入门命令](https://github.com/kickgod/Md-Linux/blob/master/Git_Code.md)
 
-- [x] :maple_leaf: [ Github 日志和版本切换](https://github.com/kickgod/Md-Linux/blob/master/Git_Code.md)
+- [x] :maple_leaf: [ Github 日志和版本切换](https://github.com/kickgod/Md-Linux/blob/master/Git/GitLogVersionChange.md)
 
 
 ----
