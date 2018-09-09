@@ -28,3 +28,37 @@ Git 命令记录
 > 每次提交之前 也就是使用push之前 请用pull先拉下来看看 有没有一样的。切记主机上面和本地上面同时修改
 > 如果需要和远程仓库建立联系 需要首先使用 git remote add name [url] 建立连接 push到远程之前需要 commit commit之前需要 git add .
 > 每次远程之前需要关注本地和远程谁发生了变化。尽量两者变化的位置不一样。
+
+##### `要查看尚未暂存的文件更新了哪些部分，不加参数直接输入 git diff：`
+```C#
+Kick@DESKTOP-SQETH1P MINGW64 /m/Git-KikcerGoer/GitLearing (master)
+$ git diff
+warning: LF will be replaced by CRLF in Resource/Kicker.md.
+The file will have its original line endings in your working directory.
+diff --git a/Resource/Kicker.md b/Resource/Kicker.md
+index 22383a2..2a12e69 100644
+--- a/Resource/Kicker.md
++++ b/Resource/Kicker.md
+@@ -1 +1,3 @@
+ Son of bish
++
++ZHESHIYIDUANFEIHUA
+```
+##### `要从 Git 中移除某个文件`
+`就必须要从已跟踪文件清单中移除（确切地说，是从暂存区域移除），然后提交。可以用 git rm 命令完成此项工作，并连带从工作目录中删除指定的文件，这样以后就不会出现在未跟踪文件清单中了。`
+```shell
+$ git rm grit.gemspec
+rm 'grit.gemspec'
+$ git status
+# On branch master
+#
+# Changes to be committed:
+# (use "git reset HEAD <file>..." to unstage)
+#
+# deleted: grit.gemspec
+#
+```
+##### `移动文件`
+```C#
+ $ git mv file_from file_to
+```
