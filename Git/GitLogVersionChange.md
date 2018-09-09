@@ -5,8 +5,7 @@
 - [x] :maple_leaf: <a href="#GITLOG">`Git log`</a>
 - [x] :maple_leaf: <a href="#GitResethardhead">`版本回退命令`</a>
     - <a href="#GotRElog">`全部回退历史`</a>
-- [x] :maple_leaf: <a href="#">``</a>
-- [x] :maple_leaf: <a href="#">``</a>
+
 
 ####  <a id="GITLOG" href="#GITLOG">Git log 命令 </a>  :star2: <a href="#top"> :arrow_up: </a>
 **`Git log`** `查看git的日志管理,下年是git log的常用格式` <br>
@@ -27,7 +26,7 @@ $ git log --pretty=oneline
 943413eb4a1dc12696ce8b3dea0ab88cb488608b (HEAD -> master, origin/master, origin/HEAD) second Commit
 5a50afc67bd841552dccf6b80043fad8d01bde0c first commit
 ```
-#####  <a id="GitResethardhead" href="#GitResethardhead">版本回退命令</a>  :star2: <a href="#top"> :arrow_up:</a>
+#### <a id="GitResethardhead" href="#GitResethardhead">版本回退命令</a>  :star2: <a href="#top"> :arrow_up:</a>
 `回退命令要使用到commit Id 也就是版本号 或者HEAD `: **`git reset --hard HEAD/commit_Id(提交版本号)`** <br/>
 
 :whale2: **`git reset --hard HEAD`** `回退到上一个版本`<br/>
@@ -37,7 +36,7 @@ $ git log --pretty=oneline
 **`注意`**:`你会发现当你回到过去的版本以后，你的git log变少了,你回到的版本将会成为你最新的git log,你之后更改的git log不见了
 比如：有十个git log 提交版本 当你回到第六个的时候 ,你会发现 输入git log后 就只有六个提交历史了`
 #####  <a id="GotRElog" href="#GotRElog">Git reflog 全部回退历史 </a>  :star2: <a href="#top"> :arrow_up: </a>
-`查看全部回退更改提交的版本`：**`git reflog`**
+`查看全部所有的回退更改提交的版本历史log`：**`git reflog`**
 
 ```C#
 $ git reflog
@@ -50,15 +49,4 @@ d93e406 (HEAD -> master, origin/master, origin/HEAD) HEAD@{4}: commit: 第三次
 943413e HEAD@{5}: commit: second Commit
 5a50afc HEAD@{6}: clone: from https://github.com/KikcerGoer/GitLearing.git
 ```
-
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-
-
-
-
-
 
