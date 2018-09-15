@@ -6,6 +6,7 @@
 
 - [x] :maple_leaf: [ Github 日志和版本切换](https://github.com/kickgod/Md-Linux/blob/master/Git/GitLogVersionChange.md)
 
+- [x] :maple_leaf: [ Github 分支操作](https://github.com/kickgod/Md-Linux/blob/master/Git/GitBranch.md)
 
 ----
 [`Pro Git中文版`](http://git.oschina.net/progit/index.html)
