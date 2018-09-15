@@ -6,8 +6,8 @@ Git 鼓励在工作流程中频繁使用分支与合并` [`分支理解`](http:/
 
 - [x] :maple_leaf: <a href="#BranchNow">`分支创建`</a>
 - [x] :maple_leaf: <a href="#BranchManager">`分支的管理`</a>
-- [x] :maple_leaf: <a href="#">``</a>
-- [x] :maple_leaf: <a href="#">``</a>
+- [x] :maple_leaf: <a href="#https://blog.csdn.net/wuyinlei/article/details/53607582">`向别人贡献你的代码`</a>
+
 
 ####  <a id="BranchNow" href="#BranchNow">分支的创建</a>  :star2: <a href="#top"> :arrow_up: </a>
 `默认指针指向 master主分支 `
@@ -43,17 +43,9 @@ $ git merge iss53
 **`$ git branch`**: `命令不仅仅能创建和删除分支，如果不加任何参数，它会给出当前所有分支的清单：` `*` `字符它表示当前所在的分支` <br/>
 **`$ git branch -v`**: `若要查看各个分支最后一个提交对象的信息`<br/>
 **`$ git branch --merged`**:` 查看哪些分支已被并入当前分支（译注：也就是说哪些分支是当前分支的直接上游。）`<br/>
-**`$ $ git branch --no-merged`**:`查看尚未合并的工作`
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
-####  <a id="" href="#"></a>  :star2: <a href="#top"> :arrow_up: </a>
+**`$ $ git branch --no-merged`**:`查看尚未合并的工作`<br/><br/>
+
+
 
 
 
