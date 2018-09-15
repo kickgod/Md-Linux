@@ -6,7 +6,7 @@ Git 鼓励在工作流程中频繁使用分支与合并` [`分支理解`](http:/
 
 - [x] :maple_leaf: <a href="#BranchNow">`分支创建`</a>
 - [x] :maple_leaf: <a href="#BranchManager">`分支的管理`</a>
-- [x] :maple_leaf: <a href="#https://blog.csdn.net/wuyinlei/article/details/53607582">`向别人贡献你的代码`</a>
+- [x] :maple_leaf: <a href="https://blog.csdn.net/wuyinlei/article/details/53607582" >`向别人贡献你的代码`</a>
 
 
 ####  <a id="BranchNow" href="#BranchNow">分支的创建</a>  :star2: <a href="#top"> :arrow_up: </a>
