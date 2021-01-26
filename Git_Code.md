@@ -18,6 +18,7 @@ Git 命令记录
 * **git status** 查看当前仓库的状态  是否有增删改查
 * **git log** 查看当前仓库的日志
 * **git commit -m [message]** 例如  git commit -m '增加了一个文件'
+* **git commit -a ** `例如当你提交的只是对文件的删除的时候用`
 * **git commit -a -m [message]** 直接从工作区,不仅过缓存区直接提交到仓库 前提该文件以及有仓库中的历史版本
 * **git show 版本号** 查看某个版本的信息
 ### 贰. 同步远程仓库
